@@ -1,0 +1,22 @@
+{
+  "name": "saluconfeitariaartesanal.com.br",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/fikdik/saluconfeitariaartesanal.com.br.git",
+  "author": "Pedro Nascimento <nennogabriel@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "gatsby develop"
+  },
+  "dependencies": {
+    "gatsby": "^2.18.6",
+    "gatsby-plugin-offline": "^3.0.26",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "eslint-config-react-app": "^5.1.0",
+    "gatsby-plugin-root-import": "^2.0.5",
+    "prettier": "^1.19.1"
+  }
+}
