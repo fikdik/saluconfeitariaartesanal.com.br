@@ -1,30 +1,30 @@
-import CMS from 'netlify-cms-app'
-import uploadcare from 'netlify-cms-media-library-uploadcare'
-import cloudinary from 'netlify-cms-media-library-cloudinary'
+import CMS from "netlify-cms-app"
+import uploadcare from "netlify-cms-media-library-uploadcare"
+import cloudinary from "netlify-cms-media-library-cloudinary"
 
-import brandPagePreview from './modules/brand/preview'
+import brandPagePreview from "./modules/brand/preview"
 
-import FileSystemBackend from 'netlify-cms-backend-fs'
-import collections from './collections'
+import FileSystemBackend from "netlify-cms-backend-fs"
+import collections from "./collections"
 
 const config = {
   display_url: window.location.origin,
   collections,
 }
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === "development") {
   // config.load_config_file = false
   config.backend = {
-    name: 'file-system',
-    api_root: '/api',
+    name: "file-system",
+    api_root: "/api",
   }
-  CMS.registerBackend('file-system', FileSystemBackend)
+  CMS.registerBackend("file-system", FileSystemBackend)
 } else {
   config.backend = {
-    name: 'github',
-    repo: 'fikdik/fikdik.com.br',
-    branch: 'master',
-    publish_mode: 'editorial_workflow',
+    name: "github",
+    repo: "fikdik/saluconfeitariaartesanal.com.br",
+    branch: "master",
+    publish_mode: "editorial_workflow",
     commit_messages: {
       create: 'Create {{collection}} "{{slug}}"',
       update: 'Update {{collection}} "{{slug}}"',
@@ -38,4 +38,4 @@ if (process.env.NODE_ENV === 'development') {
 }
 CMS.init({ config })
 
-CMS.registerPreviewTemplate('brand', brandPagePreview)
+CMS.registerPreviewTemplate("brand", brandPagePreview)
