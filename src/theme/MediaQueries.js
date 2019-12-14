@@ -1,11 +1,13 @@
 import theme from "../theme"
 
-const [phone, tablet, desktop] = theme.breakpoints
+const [lpp, spl, lpl, tablet, laptop] = theme.breakpoints
 
 const media = {
-  phone: `min-width: ${phone}`,
+  lpp: `min-width: ${lpp}`, // Large Phone Portrait
+  spl: `min-width: ${spl}`, // Small Phone Landscape
+  lpl: `min-width: ${lpl}`, // Large Phone Landscape
   tablet: `min-width: ${tablet}`,
-  desktop: `min-width: ${desktop}`,
+  laptop: `min-width: ${laptop}`,
 }
 
 export default media

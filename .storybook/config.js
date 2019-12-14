@@ -2,12 +2,14 @@ import React from "react"
 import { configure, addDecorator } from "@storybook/react"
 import { action } from "@storybook/addon-actions"
 import GlobalStyle from "../src/global/GlobalStyle"
+import { ThemeProvider } from "styled-components"
+import theme from "../src/theme"
 
 const Decorator = storyFn => (
-  <>
+  <ThemeProvider theme={theme}>
     <GlobalStyle />
     {storyFn()}
-  </>
+  </ThemeProvider>
 )
 
 addDecorator(Decorator)

@@ -1,13 +1,21 @@
-const theme = {
-  breakpoints: ["768px", "1050px", "1440px"],
-  color: {
-    white: "#fff",
-    black: "#111",
-    primary: "red",
-    secondary: "orange",
-  },
+const breakpoints = ["414px", "568px", "896px", "1040px", "1440px"]
+const colors = {
+  white: "#fff",
+  black: "#111",
+  primary: ["red", "yellow"],
+  secondary: "orange",
+}
+
+export default {
+  breakpoints,
+  colors,
   size: {
-    inner: "1260px",
+    inner: "1024px",
+  },
+  container: {
+    maxWidth: "1024px",
+    width: "90%",
+    margin: "0 auto",
   },
   textStyles: {
     heading1: {
@@ -23,5 +31,3 @@ const theme = {
     },
   },
 }
-
-export default theme

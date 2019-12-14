@@ -11,6 +11,8 @@ module.exports = {
         name: "images",
       },
     },
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-svg-sprite",
     {
       resolve: "gatsby-plugin-netlify-cms",
       options: {

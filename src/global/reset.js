@@ -138,6 +138,7 @@ export const reset = css`
   /* http://www.paulirish.com/2012/box-sizing-border-box-ftw/ (2015/04/28)*/
   html {
     box-sizing: border-box;
+    scroll-behavior: smooth;
   }
   *,
   *:before,
@@ -193,6 +194,25 @@ export const reset = css`
   th,
   td {
     user-select: text;
+    line-height: 1.23em;
+  }
+
+  body,
+  svg {
+    fill: currentColor;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  button:disabled {
+    opacity: 0.5;
+    cursor: inherit;
+  }
+
+  small {
+    font-size: 0.75em;
   }
 `
 
