@@ -1,4 +1,4 @@
-const breakpoints = ["414px", "568px", "896px", "1040px", "1440px"]
+const breakpoints = ["414px", "568px", "768px", "1040px"]
 const colors = {
   white: "#fff",
   black: "#111",

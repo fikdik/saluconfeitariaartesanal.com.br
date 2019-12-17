@@ -23,7 +23,10 @@ export default function Footer() {
             </li>
             <li>
               <SmartLink>
-                <span>Post Title 2 avery long long title them I expected</span>
+                <span>
+                  Post Title 2 a very long long title, more them I expected to
+                  be
+                </span>
                 <small>30 de outubro de 2019</small>
               </SmartLink>
             </li>
@@ -76,7 +79,7 @@ export const Container = styled.div`
 
 export const FooterColumn = styled.div`
   padding: 1rem;
-  flex: 1 0 220px;
+  flex: 1 0 160px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -117,10 +120,10 @@ export const FooterColumn = styled.div`
     flex-direction: column;
     svg {
       fill: red;
-      flex: 0 0 2.2rem;
-      height: 2.2rem;
-      width: 2.2rem;
-      margin-right: 0.75rem;
+      flex: 0 0 2rem;
+      height: 2rem;
+      width: 2rem;
+      margin-right: 0.618rem;
     }
     a {
       flex-direction: row;
@@ -132,5 +135,8 @@ export const FooterColumn = styled.div`
     margin-bottom: 0.618rem;
     display: flex;
     flex-direction: column;
+  }
+  dd {
+    font-size: 0.85rem;
   }
 `

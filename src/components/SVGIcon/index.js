@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react"
+import PropTypes from "prop-types"
 
-const reqSvgs = require.context('./assets', true, /\.svg$/)
+const reqSvgs = require.context("./assets", true, /\.svg$/)
 const paths = reqSvgs.keys()
 
 // gatsby-plugin-svg-sprite will use import (require.context) to create a sprite with svgs

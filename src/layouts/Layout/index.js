@@ -1,7 +1,16 @@
 import React from "react"
-
-// import { Container } from './styles';
+import styled from "styled-components"
+import Footer from "../../components/Footer"
+import Header from "../../components/Header"
 
 export default function Layout({ children }) {
-  return <>{children}</>
+  return (
+    <Container>
+      <Header />
+      {children}
+      <Footer />
+    </Container>
+  )
 }
+
+export const Container = styled.div``

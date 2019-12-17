@@ -6,7 +6,7 @@ const SmartLink = React.forwardRef((props, ref) => {
   return (
     <>
       {props.to ? (
-        <Link component={Link} ref={ref} {...props}>
+        <Link component={Link} ref={ref} {...props} activeClassName="active">
           {props.children}
         </Link>
       ) : (
