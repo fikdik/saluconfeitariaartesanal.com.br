@@ -11,4 +11,5 @@ export default createGlobalStyle`
     font-family: 'Avenir Next', 'Helvetica Neue', 'Helvetica', sans-serif;
     font-weight: 500;
   }
+
 `
