@@ -1,4 +1,5 @@
 import React from "react"
+
 import styled from "styled-components"
 
 export default function FlipCard({ children }) {
@@ -21,8 +22,6 @@ const Container = styled.div`
   flex: 1 1 200px;
   height: 300px;
   margin: 1rem;
-  border-radius: 8px;
-  overflow: hidden;
   /* Remove this if you don't want the 3D effect */
   perspective: 1000px;
 `
@@ -43,6 +42,9 @@ const FlipCardFront = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+
   backface-visibility: hidden;
 
   > div {
@@ -55,6 +57,8 @@ const FlipCardBack = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
   backface-visibility: hidden;
   transform: rotateY(180deg);
 `

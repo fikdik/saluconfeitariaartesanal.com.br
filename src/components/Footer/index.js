@@ -1,8 +1,10 @@
 import React from "react"
+
 import styled from "styled-components"
-import Signature from "./Signature"
+
 import SmartLink from "../SmartLink"
 import SVGIcon from "../SVGIcon"
+import Signature from "./Signature"
 
 export default function Footer() {
   return (

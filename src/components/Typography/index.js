@@ -1,4 +1,5 @@
 import styled from "styled-components"
+
 import DynamicComponent from "../../global/DynamicComponent"
 import theme from "../../theme"
 

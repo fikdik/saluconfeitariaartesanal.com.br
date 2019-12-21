@@ -1,7 +1,9 @@
 import React from "react"
+
 import styled from "styled-components"
-import SVGIcon from "../../components/SVGIcon"
+
 import SmartLink from "../../components/SmartLink"
+import SVGIcon from "../../components/SVGIcon"
 import media from "../../theme/MediaQueries"
 import Navbar from "./Navbar"
 

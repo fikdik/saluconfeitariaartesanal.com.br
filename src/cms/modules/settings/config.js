@@ -25,17 +25,8 @@ const siteMetadataFields = {
   ],
 }
 
-const featuresFields = {
-  file: "src/cms/database/features.json",
-  label: "Features",
-  name: "features",
-  fields: [
-    { name: "nprogress_color", widget: "string", label: "Loader Color" },
-  ],
-}
-
 export default {
   label: "Settings",
   name: "settings",
-  files: [manifestFields, siteMetadataFields, featuresFields],
+  files: [manifestFields, siteMetadataFields],
 }

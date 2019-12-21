@@ -3,8 +3,9 @@ const colorFields = {
   label: "Colors",
   name: "colors",
   fields: [
-    { name: "primary", widget: "color", label: "Primary" },
-    { name: "secondary", widget: "color", label: "Secondary" },
+    { name: "primary", widget: "string", label: "Primary" },
+    { name: "secondary", widget: "string", label: "Secondary" },
+    { name: "nprogress_color", widget: "string", label: "Loader Color" },
   ],
 }
 

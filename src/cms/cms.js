@@ -1,16 +1,12 @@
 import CMS from "netlify-cms-app"
-import uploadcare from "netlify-cms-media-library-uploadcare"
-import cloudinary from "netlify-cms-media-library-cloudinary"
-
-import themePagePreview from "./modules/theme/preview"
-import sharePagePreview from "./modules/share/preview"
-import settingsPagePreview from "./modules/settings/preview"
-
 import FileSystemBackend from "netlify-cms-backend-fs"
-import collections from "./collections"
-import { SlidesControl, SlidesPreview } from "./widgets/slides"
+import cloudinary from "netlify-cms-media-library-cloudinary"
+import uploadcare from "netlify-cms-media-library-uploadcare"
 
-CMS.registerWidget("color", SlidesControl, SlidesPreview)
+import collections from "./collections"
+import settingsPagePreview from "./modules/settings/preview"
+import sharePagePreview from "./modules/share/preview"
+import themePagePreview from "./modules/theme/preview"
 
 const config = {
   display_url: window.location.origin,

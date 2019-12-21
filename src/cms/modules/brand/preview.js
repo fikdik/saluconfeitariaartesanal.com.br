@@ -1,12 +1,13 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react"
+
+import PropTypes from "prop-types"
 
 function Preview({ entry, widgetFor }) {
-  const data = entry.getIn(['data', 'title'])
+  const data = entry.getIn(["data", "title"])
   return (
     <section>
       <h1>Hello World</h1>
-      <h2>{data || 'nothing'}</h2>
+      <h2>{data || "nothing"}</h2>
     </section>
   )
 }

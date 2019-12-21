@@ -1,6 +1,8 @@
 import React from "react"
+
 import styled from "styled-components"
 import { typography } from "styled-system"
+
 import SmartLink from "../../SmartLink"
 
 export default function Signature(props) {

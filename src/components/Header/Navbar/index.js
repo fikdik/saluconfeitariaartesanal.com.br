@@ -1,8 +1,10 @@
 import React, { useState } from "react"
+
 import styled, { css } from "styled-components"
+
+import media from "../../../theme/MediaQueries"
 import SmartLink from "../../SmartLink"
 import BurgerMenu from "./BurgerMenu"
-import media from "../../../theme/MediaQueries"
 
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false)

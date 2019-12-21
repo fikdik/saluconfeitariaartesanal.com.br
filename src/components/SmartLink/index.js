@@ -1,6 +1,7 @@
 import React from "react"
-import PropTypes from "prop-types"
+
 import { Link } from "gatsby"
+import PropTypes from "prop-types"
 
 const SmartLink = React.forwardRef((props, ref) => {
   return (
