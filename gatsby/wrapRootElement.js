@@ -1,7 +1,7 @@
 import React from "react"
-import GlobalStyle from "./global/GlobalStyle"
+import GlobalStyle from "../src/global/GlobalStyle"
 import { ThemeProvider } from "styled-components"
-import theme from "./theme"
+import theme from "../src/theme"
 
 // import StoreProvider from './store'
 

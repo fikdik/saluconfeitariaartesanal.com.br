@@ -2,10 +2,15 @@ import CMS from "netlify-cms-app"
 import uploadcare from "netlify-cms-media-library-uploadcare"
 import cloudinary from "netlify-cms-media-library-cloudinary"
 
-import brandPagePreview from "./modules/brand/preview"
+import themePagePreview from "./modules/theme/preview"
+import sharePagePreview from "./modules/share/preview"
+import settingsPagePreview from "./modules/settings/preview"
 
 import FileSystemBackend from "netlify-cms-backend-fs"
 import collections from "./collections"
+import { SlidesControl, SlidesPreview } from "./widgets/slides"
+
+CMS.registerWidget("color", SlidesControl, SlidesPreview)
 
 const config = {
   display_url: window.location.origin,
@@ -36,6 +41,9 @@ if (process.env.NODE_ENV === "development") {
   CMS.registerMediaLibrary(uploadcare)
   CMS.registerMediaLibrary(cloudinary)
 }
+
 CMS.init({ config })
 
-CMS.registerPreviewTemplate("brand", brandPagePreview)
+CMS.registerPreviewTemplate("theme", themePagePreview)
+CMS.registerPreviewTemplate("share", sharePagePreview)
+CMS.registerPreviewTemplate("settings", settingsPagePreview)

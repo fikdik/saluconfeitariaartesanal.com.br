@@ -1,3 +1,5 @@
-import brand from "./modules/brand/config.js"
+import share from "./modules/share/config.js"
+import theme from "./modules/theme/config.js"
+import settings from "./modules/settings/config.js"
 
-export default [brand]
+export default [share, theme, settings]

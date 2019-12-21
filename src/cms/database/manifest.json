@@ -1,0 +1,8 @@
+{
+  "name": "Salu Confeitaria Artesanal",
+  "short_name": "Salu",
+  "start_url": "/",
+  "background_color": "#F7F0EB",
+  "theme_color": "#DD2727",
+  "icon": "/img/salu-logo.svg"
+}

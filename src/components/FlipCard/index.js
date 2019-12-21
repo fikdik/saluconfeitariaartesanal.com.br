@@ -18,9 +18,11 @@ export default function FlipCard({ children }) {
 
 const Container = styled.div`
   background-color: transparent;
-  width: 300px;
-  height: 200px;
-  border: 1px solid #f1f1f1;
+  flex: 1 1 200px;
+  height: 300px;
+  margin: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
   /* Remove this if you don't want the 3D effect */
   perspective: 1000px;
 `
@@ -43,16 +45,16 @@ const FlipCardFront = styled.div`
   height: 100%;
   backface-visibility: hidden;
 
-  background-color: #bbb;
-  color: black;
+  > div {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+  }
 `
 const FlipCardBack = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-
-  background-color: dodgerblue;
-  color: white;
   transform: rotateY(180deg);
 `

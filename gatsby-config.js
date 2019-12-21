@@ -1,8 +1,8 @@
+const siteMetadata = require("./src/cms/database/siteMetadata.json")
+const manifest = require("./src/cms/database/manifest.json")
+
 module.exports = {
-  siteMetadata: {
-    title: `Salu`,
-    siteUrl: `https://saluconfeitariaartezanal.com.br`,
-  },
+  siteMetadata,
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -19,33 +19,29 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-styled-components`,
       options: {
-        path: `${__dirname}/content`,
-        name: `content`,
-      },
-    },
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Salu Confeitaria Artesanal`,
-        short_name: `Salu`,
-        start_url: `/`,
-        background_color: `#f7f0eb`,
-        theme_color: `#DD2727`,
-        display: `standalone`,
-        icon: `static/img/salu-logo.svg`,
+        pure: true,
+        displayName: process.env.NODE_ENV === "development",
       },
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-svg-sprite`,
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        ...manifest,
+        display: `standalone`,
+        icon: `${__dirname}/static/${manifest.icon}`,
+      },
+    },
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
         // Setting a color is optional.
-        color: `#ff0000`,
+        color: `#DD2727`,
         // Disable the loading spinner.
         showSpinner: false,
       },
@@ -69,7 +65,7 @@ module.exports = {
         // Setting this parameter is optional
         anonymize: false,
         // Delays sending pageview hits on route update (in milliseconds)
-        pageTransitionDelay: 150,
+        pageTransitionDelay: 0,
       },
     },
     {
