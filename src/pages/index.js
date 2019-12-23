@@ -2,58 +2,60 @@ import React from "react"
 
 import styled from "styled-components"
 
-import FlipCard from "../components/FlipCard"
-import SmartLink from "../components/SmartLink"
-import SVGIcon from "../components/SVGIcon"
-import Layout from "../layouts/Layout"
+import FlipCard from "~/components/FlipCard"
+import SmartLink from "~/components/SmartLink"
+import SVGIcon from "~/components/SVGIcon"
+import Layout from "~/layouts/Layout"
 
 export default function pages() {
   return (
     <Layout>
       <main>
         <Container>
-          <FlipCard>
-            <FlipCardFront bgimage={"/img/bolo-00003.jpg"}>
-              <div>
-                <SVGIcon name="smile"></SVGIcon>
-                <div>Bolos Apaixonantes</div>
-              </div>
-            </FlipCardFront>
-            <FlipCardBack>
-              <h3>Bolos e Doces </h3>
-              <div>
-                Adoramos experimentar, veja alguns dos bolos que ja fizemos e
-                solicite um sabor.
-              </div>
-              <SmartLink to="/bolos">Saiba Mais...</SmartLink>
-            </FlipCardBack>
-          </FlipCard>
-          <FlipCard>
-            <FlipCardFront bgimage={"/img/coffee-00001.jpg"}>
-              <div>
-                <SVGIcon name="coffee"></SVGIcon>
-                <div>Coffee Breaks</div>
-              </div>
-            </FlipCardFront>
-            <FlipCardBack>
-              <h3>Coffee Break </h3>
-              <div>O coffee break para seu evento</div>
-              <SmartLink to="/bolos">Solicite</SmartLink>
-            </FlipCardBack>
-          </FlipCard>
-          <FlipCard>
-            <FlipCardFront bgimage={"/img/especial-00001.jpg"}>
-              <div>
-                <SVGIcon name="gift"></SVGIcon>
-                <div>Presentes Especiais</div>
-              </div>
-            </FlipCardFront>
-            <FlipCardBack>
-              <h3>Produtos Especiais</h3>
-              <div>Peça aquela encomenda para o seu dia especial.</div>
-              <SmartLink to="/bolos">Saiba Mais...</SmartLink>
-            </FlipCardBack>
-          </FlipCard>
+          <div>
+            <FlipCard>
+              <FlipCardFront bgimage={"/img/bolo-00003.jpg"}>
+                <div>
+                  <SVGIcon name="smile"></SVGIcon>
+                  <div>Bolos Apaixonantes</div>
+                </div>
+              </FlipCardFront>
+              <FlipCardBack>
+                <h3>Bolos e Doces </h3>
+                <div>
+                  Adoramos experimentar, veja alguns dos bolos que ja fizemos e
+                  solicite um sabor.
+                </div>
+                <SmartLink to="/bolos">Saiba Mais...</SmartLink>
+              </FlipCardBack>
+            </FlipCard>
+            <FlipCard>
+              <FlipCardFront bgimage={"/img/coffee-00001.jpg"}>
+                <div>
+                  <SVGIcon name="coffee"></SVGIcon>
+                  <div>Coffee Breaks</div>
+                </div>
+              </FlipCardFront>
+              <FlipCardBack>
+                <h3>Coffee Break </h3>
+                <div>O coffee break para seu evento</div>
+                <SmartLink to="/bolos">Solicite</SmartLink>
+              </FlipCardBack>
+            </FlipCard>
+            <FlipCard>
+              <FlipCardFront bgimage={"/img/especial-00001.jpg"}>
+                <div>
+                  <SVGIcon name="gift"></SVGIcon>
+                  <div>Presentes Especiais</div>
+                </div>
+              </FlipCardFront>
+              <FlipCardBack>
+                <h3>Produtos Especiais</h3>
+                <div>Peça aquela encomenda para o seu dia especial.</div>
+                <SmartLink to="/bolos">Saiba Mais...</SmartLink>
+              </FlipCardBack>
+            </FlipCard>
+          </div>
         </Container>
       </main>
     </Layout>
@@ -62,9 +64,12 @@ export default function pages() {
 
 const Container = styled.div`
   ${props => props.theme.container}
-  display: flex;
-  flex-wrap: wrap;
-  color: #fff;
+  > div {
+    display: flex;
+    flex-wrap: wrap;
+    color: #fff;
+    margin: 0 -1.5rem;
+  }
 `
 
 const FlipCardFront = styled.div`

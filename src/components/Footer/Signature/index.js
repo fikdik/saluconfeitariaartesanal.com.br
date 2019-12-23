@@ -3,7 +3,7 @@ import React from "react"
 import styled from "styled-components"
 import { typography } from "styled-system"
 
-import SmartLink from "../../SmartLink"
+import SmartLink from "~/components/SmartLink"
 
 export default function Signature(props) {
   const thisYear = new Date().getFullYear()

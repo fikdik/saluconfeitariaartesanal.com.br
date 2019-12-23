@@ -3,10 +3,7 @@ import FileSystemBackend from "netlify-cms-backend-fs"
 import cloudinary from "netlify-cms-media-library-cloudinary"
 import uploadcare from "netlify-cms-media-library-uploadcare"
 
-import collections from "./collections"
-import settingsPagePreview from "./modules/settings/preview"
-import sharePagePreview from "./modules/share/preview"
-import themePagePreview from "./modules/theme/preview"
+import { collections, registerPreviews } from "./collections"
 
 const config = {
   display_url: window.location.origin,
@@ -40,6 +37,4 @@ if (process.env.NODE_ENV === "development") {
 
 CMS.init({ config })
 
-CMS.registerPreviewTemplate("theme", themePagePreview)
-CMS.registerPreviewTemplate("share", sharePagePreview)
-CMS.registerPreviewTemplate("settings", settingsPagePreview)
+registerPreviews()

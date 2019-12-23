@@ -2,8 +2,9 @@ import React, { useState } from "react"
 
 import styled, { css } from "styled-components"
 
-import media from "../../../theme/MediaQueries"
-import SmartLink from "../../SmartLink"
+import SmartLink from "~/components/SmartLink"
+import media from "~/theme/MediaQueries"
+
 import BurgerMenu from "./BurgerMenu"
 
 export default function Navbar() {

@@ -2,9 +2,10 @@ import React from "react"
 
 import styled from "styled-components"
 
-import SmartLink from "../../components/SmartLink"
-import SVGIcon from "../../components/SVGIcon"
-import media from "../../theme/MediaQueries"
+import SmartLink from "~/components/SmartLink"
+import SVGIcon from "~/components/SVGIcon"
+import media from "~/theme/MediaQueries"
+
 import Navbar from "./Navbar"
 
 export default function Header() {

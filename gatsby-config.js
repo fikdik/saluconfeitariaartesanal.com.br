@@ -1,9 +1,15 @@
-const siteMetadata = require("./src/cms/database/siteMetadata.json")
 const manifest = require("./src/cms/database/manifest.json")
+const siteMetadata = require("./src/cms/database/siteMetadata.json")
 
 module.exports = {
   siteMetadata,
   plugins: [
+    {
+      resolve: "gatsby-plugin-root-import",
+      options: {
+        "~": `${__dirname}/src`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

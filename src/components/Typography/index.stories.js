@@ -2,7 +2,7 @@ import React from "react"
 
 import { storiesOf } from "@storybook/react"
 
-import { Heading1, TextStyle1 } from "../Typography"
+import { Heading1, TextStyle1 } from "~/Typography"
 
 storiesOf("Typography", module)
   .add("headings", () => <Heading1>Heading1</Heading1>)

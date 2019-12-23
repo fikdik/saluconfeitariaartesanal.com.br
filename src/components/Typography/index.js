@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
-import DynamicComponent from "../../global/DynamicComponent"
-import theme from "../../theme"
+import DynamicComponent from "~/global/DynamicComponent"
+import theme from "~/theme"
 
 const { heading1, textStyle1 } = theme.textStyles
 

@@ -2,7 +2,7 @@ import React from "react"
 
 import styled from "styled-components"
 
-import Layout from "../layouts/Layout"
+import Layout from "~/layouts/Layout"
 
 export default function pages({ children }) {
   return (

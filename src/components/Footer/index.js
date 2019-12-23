@@ -2,8 +2,9 @@ import React from "react"
 
 import styled from "styled-components"
 
-import SmartLink from "../SmartLink"
-import SVGIcon from "../SVGIcon"
+import SmartLink from "~/components/SmartLink"
+import SVGIcon from "~/components/SVGIcon"
+
 import Signature from "./Signature"
 
 export default function Footer() {
