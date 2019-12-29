@@ -1,13 +1,5 @@
 import React from "react"
-import GlobalStyle from "../src/global/GlobalStyle"
-import { ThemeProvider } from "styled-components"
-import theme from "../src/theme"
 
-// import StoreProvider from './store'
+import "../src/styles/index.css"
 
-export const wrapRootElement = ({ element }) => (
-  <ThemeProvider theme={theme}>
-    <GlobalStyle />
-    {element}
-  </ThemeProvider>
-)
+export const wrapRootElement = ({ element }) => <>{element}</>

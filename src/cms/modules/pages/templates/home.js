@@ -2,12 +2,16 @@ import React from "react"
 
 import PropTypes from "prop-types"
 
-import { HomePageTemplate } from "~/templates/Home"
+import { HomePageTemplate } from "~/templates/home-page"
 
-function Preview({ entry, widgetFor }) {
-  const data = entry.getIn(["data", "title"])
-  console.log("teste ", data)
-  return <HomePageTemplate></HomePageTemplate>
+function Preview({ entry }) {
+  const data = entry.getIn(["data"]).toJS()
+
+  if (data) {
+    return <HomePageTemplate data={data}></HomePageTemplate>
+  } else {
+    return <div>Loading ...</div>
+  }
 }
 
 Preview.propTypes = {

@@ -23,6 +23,7 @@ if (process.env.NODE_ENV === "development") {
     repo: "fikdik/saluconfeitariaartesanal.com.br",
     branch: "master",
     publish_mode: "editorial_workflow",
+    squash_merges: true,
     commit_messages: {
       create: 'Create {{collection}} "{{slug}}"',
       update: 'Update {{collection}} "{{slug}}"',

@@ -1,9 +1,6 @@
 import React, { useState } from "react"
 
-import styled, { css } from "styled-components"
-
 import SmartLink from "~/components/SmartLink"
-import media from "~/theme/MediaQueries"
 
 import BurgerMenu from "./BurgerMenu"
 
@@ -13,102 +10,39 @@ export default function Navbar() {
     setNavbarOpen(!navbarOpen)
   }
   return (
-    <ContainerBG>
-      <Container navbarOpen={navbarOpen}>
+    <div className="container navbar">
+      <div className="navbar-container">
         <div>
-          <Brand to="/">
-            <img src="/img/salu-logo.svg" alt="Salu Logo" />
-          </Brand>
+          <img className="h-16" src="/img/salu-logo.svg" alt="Workcation" />
+        </div>
+        <div className="sm:hidden">
           <BurgerMenu toggleNavbar={toggleNavbar} navbarOpen={navbarOpen} />
         </div>
-        <ul className={navbarOpen ? "open" : ""}>
-          <li>
-            <SmartLink to="/">Home</SmartLink>
-          </li>
-          <li>
-            <SmartLink to="/sobre">Sobre</SmartLink>
-          </li>
-          <li>
-            <SmartLink to="/blog">Blog</SmartLink>
-          </li>
-          <li>
-            <SmartLink to="/contato">Contato</SmartLink>
-          </li>
-        </ul>
-      </Container>
-    </ContainerBG>
+      </div>
+      <nav
+        className={`px-2 pt-2 pb-4 text-center sm:flex sm:p-0 ${
+          navbarOpen ? "block" : "hidden"
+        }`}
+      >
+        <a
+          href="#"
+          className="block px-2 py-1 text-black font-semibold rounded hover:bg-gray-800"
+        >
+          List your property
+        </a>
+        <a
+          href="#"
+          className="mt-1 block px-2 py-1 text-black font-semibold rounded hover:bg-gray-800 sm:mt-0 sm:ml-2"
+        >
+          Trips
+        </a>
+        <a
+          href="#"
+          className="mt-1 block px-2 py-1 text-black font-semibold rounded hover:bg-gray-800 sm:mt-0 sm:ml-2"
+        >
+          Messages
+        </a>
+      </nav>
+    </div>
   )
 }
-
-const ContainerBG = styled.section``
-
-const Container = styled.nav`
-  ${props => props.theme.container}
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
-  > div {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  ul {
-    display: none;
-    a {
-      width: 100%;
-      padding: 0.75rem;
-      text-align: center;
-      text-transform: uppercase;
-      &.active {
-        font-weight: bold;
-      }
-      &:hover {
-        transform: translateY(-2px);
-      }
-    }
-  }
-
-  ${media.tablet} {
-    flex-direction: row;
-    > div {
-      display: block;
-    }
-    ul {
-      flex: 1;
-      display: flex;
-      justify-content: flex-end;
-    }
-  }
-
-  ${props =>
-    props.navbarOpen &&
-    css`
-      ul {
-        display: block;
-        a {
-          display: block;
-          text-align: center;
-          color: #111;
-          padding: 1.2rem;
-          font-size: 1.5rem;
-        }
-      }
-    `};
-`
-
-const Brand = styled(SmartLink)`
-  img {
-    padding: 1rem 0;
-    width: 100px;
-  }
-  ${media.tablet} {
-    img {
-      width: 144px;
-    }
-  }
-`

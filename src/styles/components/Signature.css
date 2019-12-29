@@ -1,0 +1,18 @@
+.signature {
+  @apply text-center p-1;
+  background-color: #000;
+  color: #ddd;
+
+  & a {
+    color: #dd922c;
+    display: inline-block;
+    margin-left: 0.5rem;
+    transition: transform ease 150ms;
+    &:hover {
+      transform: scale(1.2);
+    }
+    & small {
+      color: #a31216;
+    }
+  }
+}

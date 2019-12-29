@@ -6,12 +6,12 @@ import PropTypes from "prop-types"
 const SmartLink = React.forwardRef((props, ref) => {
   return (
     <>
-      {props.to ? (
+      {props?.to.startsWith("/") ? (
         <Link component={Link} ref={ref} {...props} activeClassName="active">
           {props.children}
         </Link>
       ) : (
-        <a ref={ref} target="_blank" {...props}>
+        <a ref={ref} target="_blank" href={props.to} {...props}>
           {props.children}
         </a>
       )}
@@ -24,6 +24,6 @@ SmartLink.propTypes = {
 }
 
 SmartLink.defaultProps = {
-  to: null,
+  to: "",
 }
 export default SmartLink

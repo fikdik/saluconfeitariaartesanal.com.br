@@ -10,6 +10,8 @@ module.exports = {
         "~": `${__dirname}/src`,
       },
     },
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -24,17 +26,30 @@ module.exports = {
         name: `pages`,
       },
     },
-    {
-      resolve: `gatsby-plugin-styled-components`,
-      options: {
-        pure: true,
-        displayName: process.env.NODE_ENV === "development",
-      },
-    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-svg-sprite`,
-    `gatsby-plugin-react-helmet`,
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-relative-images",
+            options: {
+              name: "uploads",
+            },
+          },
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              quality: 75,
+              maxWidth: 1600,
+            },
+          },
+          `gatsby-remark-copy-linked-files`,
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -85,6 +100,14 @@ module.exports = {
         manualInit: true,
       },
     },
-    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        tailwind: true,
+        purgeOnly: [`src/styles/index.css`],
+      },
+    },
+
+    // `gatsby-plugin-offline`,
   ],
 }

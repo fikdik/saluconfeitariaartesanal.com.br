@@ -4,7 +4,13 @@ const homeFields = {
   name: "home",
   fields: [
     {
-      name: "flipcard",
+      name: "templateKey",
+      widget: "hidden",
+      default: "home-page",
+      label: "Template Key",
+    },
+    {
+      name: "flipcards",
       widget: "list",
       label: "Flip Card",
       fields: [
@@ -24,8 +30,7 @@ const homeFields = {
                 { label: "Coffee Mug", value: "coffee" },
               ],
             },
-            { name: "bgColor", widget: "string", label: "Background Color" },
-            { name: "bgImage", widget: "image", label: "Background Image" },
+            { name: "imgPath", widget: "image", label: "Background Image" },
           ],
         },
         {
@@ -34,10 +39,14 @@ const homeFields = {
           label: "Back",
           fields: [
             { name: "title", widget: "string", label: "Title" },
-            { name: "text", widget: "string", label: "Text" },
-            { name: "btnText", widget: "string", label: "Buton Text" },
-            { name: "btnLink", widget: "string", label: "Button Link" },
-            { name: "bgColor", widget: "string", label: "Background Color" },
+            { name: "description", widget: "string", label: "Text" },
+            { name: "link", widget: "string", label: "Button Link" },
+            {
+              name: "linkText",
+              widget: "string",
+              label: "Buton Text",
+              required: false,
+            },
           ],
         },
       ],

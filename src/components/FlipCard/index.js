@@ -1,64 +1,37 @@
 import React from "react"
 
-import styled from "styled-components"
+import SmartLink from "~/components/SmartLink"
+import SVGIcon from "~/components/SVGIcon"
 
-export default function FlipCard({ children }) {
+export default function FlipCard({ data, key }) {
+  const { front, back } = data
   return (
-    <Container>
-      <FlipCardBox>
-        <FlipCardFront>
-          {children[0] || "This component needs two children"}
-        </FlipCardFront>
-        <FlipCardBack>
-          {children[1] || "This component needs a second child element"}
-        </FlipCardBack>
-      </FlipCardBox>
-    </Container>
+    <div className="flip-card" key={key}>
+      <div className="flip-card-inner">
+        <div className="flip-card-front">
+          <div
+            className="h-full bg-cover bg-center rounded-lg"
+            style={{ backgroundImage: `url(${front?.imgPath})` }}
+          >
+            <div
+              className="h-full flex flex-col justify-center items-center rounded-lg"
+              style={{ backgroundColor: "rgba(0,0,0,0.3)" }}
+            >
+              <SVGIcon className="h-16 w-16" name={front?.icon}></SVGIcon>
+              <span className="text-xl font-bold">{front?.title}</span>
+            </div>
+          </div>
+        </div>
+        <div className="flip-card-back">
+          <div className="bg-red-600 h-full p-4 flex flex-col justify-around items-center rounded-lg">
+            <h3 className="font-bold text-xl">{back?.title}</h3>
+            <div>{back?.description}</div>
+            <SmartLink className="btn" to={back?.link}>
+              {back?.linkText || "Saiba Mais..."}
+            </SmartLink>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
-
-const Container = styled.div`
-  background-color: transparent;
-  flex: 1 1 200px;
-  height: 300px;
-  margin: 1rem;
-  /* Remove this if you don't want the 3D effect */
-  perspective: 1000px;
-`
-
-const FlipCardBox = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-  ${Container}:hover & {
-    transform: rotateY(180deg);
-  }
-`
-
-const FlipCardFront = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-
-  backface-visibility: hidden;
-
-  > div {
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-  }
-`
-const FlipCardBack = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-  backface-visibility: hidden;
-  transform: rotateY(180deg);
-`

@@ -9,9 +9,10 @@ const paths = reqSvgs.keys()
 // eslint-disable-next-line no-unused-vars
 const svgs = paths.map(path => reqSvgs(path))
 
-export default function Icon({ name }) {
+export default function Icon(props) {
+  const { name } = props
   return (
-    <svg>
+    <svg {...props}>
       <use xlinkHref={`#${name}`} />
     </svg>
   )
