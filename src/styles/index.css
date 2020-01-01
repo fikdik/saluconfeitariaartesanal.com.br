@@ -3,6 +3,7 @@
 @import "tailwindcss/components";
 @import "./base/_all.css";
 @import "./components/_all.css";
+@import "./templates/_all.css";
 
 @import "tailwindcss/utilities";
 @import "tailwindcss/screens";

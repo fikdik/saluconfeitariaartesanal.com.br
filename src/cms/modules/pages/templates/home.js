@@ -2,7 +2,7 @@ import React from "react"
 
 import PropTypes from "prop-types"
 
-import { HomePageTemplate } from "~/templates/home-page"
+import HomePageTemplate from "~/templates/HomePageTamplate"
 
 function Preview({ entry }) {
   const data = entry.getIn(["data"]).toJS()

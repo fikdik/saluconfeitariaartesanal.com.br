@@ -1,15 +1,15 @@
 const colorFields = {
-  file: "src/cms/database/themeColors.json",
   label: "Colors",
   name: "colors",
+  file: "content/theme/colors.json",
   fields: [
     {
+      label: "Color",
       name: "color",
       widget: "list",
-      label: "Color",
       fields: [
-        { name: "name", widget: "string", label: "Name" },
-        { name: "color", widget: "string", label: "color" },
+        { label: "Name", name: "name", widget: "string" },
+        { label: "Color", name: "color", widget: "string" },
       ],
     },
   ],

@@ -13,7 +13,9 @@ export default function Navbar() {
     <div className="container navbar">
       <div className="navbar-container">
         <div>
-          <img className="h-16" src="/img/salu-logo.svg" alt="Workcation" />
+          <SmartLink to="/">
+            <img className="h-16" src="/img/salu-logo.svg" alt="the brand" />
+          </SmartLink>
         </div>
         <div className="sm:hidden">
           <BurgerMenu toggleNavbar={toggleNavbar} navbarOpen={navbarOpen} />

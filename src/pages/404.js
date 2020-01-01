@@ -2,16 +2,12 @@ import React from "react"
 
 import Layout from "~/layouts/Layout"
 
-export default function pages({ children }) {
+export default function pages() {
   return (
     <Layout>
-      <div className="Container">
-        <h1>Pagina não encontrada</h1>
+      <div className="container">
+        <p className="text-4xl text-center">Pagina não encontrada</p>
       </div>
     </Layout>
   )
 }
-
-// export const Container = styled.div`
-//   ${props => props.theme.container}
-// `

@@ -1,5 +1,4 @@
 ---
-templateKey: home-page
 flipcards:
   - back:
       description: >-
@@ -10,7 +9,7 @@ flipcards:
       title: Bolos e Doces
     front:
       icon: smile
-      imgPath: /img/bolo-00002.jpg
+      img: /img/bolo-00002.jpg
       title: Bolos Apaixonantes
   - back:
       description: O coffee break para seu evento
@@ -19,7 +18,7 @@ flipcards:
       title: Coffee Break
     front:
       icon: coffee
-      imgPath: /img/coffee-00001.jpg
+      img: /img/coffee-00001.jpg
       title: Coffee Breaks
   - back:
       description: Peça aquela encomenda para o seu dia especial.
@@ -28,6 +27,6 @@ flipcards:
       title: Produtos Especiais
     front:
       icon: gift
-      imgPath: /img/especial-00001.jpg
+      img: /img/especial-00001.jpg
       title: Presentes Especiais
 ---

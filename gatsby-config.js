@@ -1,5 +1,5 @@
-const manifest = require("./src/cms/database/manifest.json")
-const siteMetadata = require("./src/cms/database/siteMetadata.json")
+const manifest = require("./content/settings/manifest.json")
+const siteMetadata = require("./content/settings/siteMetadata.json")
 
 module.exports = {
   siteMetadata,
@@ -16,14 +16,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/static/img`,
-        name: `uploads`,
+        name: `images`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages`,
-        name: `pages`,
+        path: `${__dirname}/content`,
+        name: `content`,
       },
     },
     `gatsby-plugin-sharp`,

@@ -3,6 +3,6 @@ html {
   @apply font-sans text-black;
 }
 
-a.link {
-  @apply no-underline;
+textarea {
+  resize: none;
 }

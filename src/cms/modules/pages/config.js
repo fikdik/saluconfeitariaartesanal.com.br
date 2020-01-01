@@ -1,18 +1,12 @@
 const homeFields = {
-  file: "src/pages/index.md",
+  file: "content/pages/index.md",
   label: "Home",
   name: "home",
   fields: [
     {
-      name: "templateKey",
-      widget: "hidden",
-      default: "home-page",
-      label: "Template Key",
-    },
-    {
+      label: "Flip Card",
       name: "flipcards",
       widget: "list",
-      label: "Flip Card",
       fields: [
         {
           name: "front",
@@ -30,7 +24,7 @@ const homeFields = {
                 { label: "Coffee Mug", value: "coffee" },
               ],
             },
-            { name: "imgPath", widget: "image", label: "Background Image" },
+            { name: "img", widget: "image", label: "Background Image" },
           ],
         },
         {
@@ -38,13 +32,13 @@ const homeFields = {
           widget: "object",
           label: "Back",
           fields: [
-            { name: "title", widget: "string", label: "Title" },
-            { name: "description", widget: "string", label: "Text" },
-            { name: "link", widget: "string", label: "Button Link" },
+            { label: "Title", name: "title", widget: "string" },
+            { label: "Text", name: "description", widget: "string" },
+            { label: "Button Link", name: "link", widget: "string" },
             {
+              label: "Buton Text",
               name: "linkText",
               widget: "string",
-              label: "Buton Text",
               required: false,
             },
           ],
@@ -54,8 +48,24 @@ const homeFields = {
   ],
 }
 
+const bolosFields = {
+  file: "content/pages/bolos.md",
+  label: "Bolos",
+  name: "bolos",
+  fields: [
+    { label: "Title", name: "title", widget: "string" },
+    {
+      label: "Galery",
+      name: "galery",
+      widget: "list",
+      fields: [{ label: "Picture", name: "picture", widget: "image" }],
+    },
+    { label: "Body", name: "body", widget: "markdown" },
+  ],
+}
+
 export default {
   label: "Pages",
   name: "pages",
-  files: [homeFields],
+  files: [homeFields, bolosFields],
 }

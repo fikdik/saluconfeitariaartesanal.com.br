@@ -1,20 +1,29 @@
-import React from "react"
+import React, { useMemo } from "react"
 
 import SmartLink from "~/components/SmartLink"
 import SVGIcon from "~/components/SVGIcon"
 
 export default function FlipCard({ data, key }) {
   const { front, back } = data
+  const image = useMemo(
+    () =>
+      front && front.img && front.img.childImageSharp
+        ? front.img.childImageSharp.fluid.src
+        : front?.img,
+    [front]
+  )
   return (
     <div className="flip-card" key={key}>
       <div className="flip-card-inner">
         <div className="flip-card-front">
           <div
             className="h-full bg-cover bg-center rounded-lg"
-            style={{ backgroundImage: `url(${front?.imgPath})` }}
+            style={{
+              backgroundImage: `url(${image})`,
+            }}
           >
             <div
-              className="h-full flex flex-col justify-center items-center rounded-lg"
+              className="h-full flex flex-col justify-center items-center rounded-lg overflow-hidden"
               style={{ backgroundColor: "rgba(0,0,0,0.3)" }}
             >
               <SVGIcon className="h-16 w-16" name={front?.icon}></SVGIcon>

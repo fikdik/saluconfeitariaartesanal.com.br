@@ -1,20 +1,20 @@
 const socialFields = {
-  file: "src/cms/database/social.json",
   label: "Social Network",
   name: "socialNetwork",
+  file: "content/share/social.json",
   fields: [
     {
+      label: "Social Url",
       name: "social",
       widget: "list",
-      label: "Social Url",
       fields: [
         {
+          label: "Network",
           name: "network",
           widget: "select",
-          label: "Network",
           options: ["facebook", "instagram"],
         },
-        { name: "url", widget: "string", label: "Link" },
+        { label: "Link", name: "url", widget: "string" },
       ],
     },
   ],
