@@ -79,7 +79,9 @@ export default function SimpleForm(props) {
           required={true}
         />
       </div>
-      <button type="submit">Enviar</button>
+      <button className="bg-yellow-500 py-3 rounded-lg" type="submit">
+        Enviar
+      </button>
     </form>
   )
 }

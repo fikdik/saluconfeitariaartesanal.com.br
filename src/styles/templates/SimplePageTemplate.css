@@ -1,8 +1,21 @@
 .simple-page-content {
-  @apply rounded-lg;
-  background-color: rgba(255, 255, 255, 0.5);
+  @apply px-6 py-10 rounded-lg;
+  background-color: rgba(255, 255, 255, 0.6);
   & h2 {
     @apply font-bold text-2xl mt-2 pt-1;
     border-top: 1px dotted red;
   }
+}
+
+.bg-svg {
+  @apply pb-6;
+  background-image: url("/img/bg-mask.svg");
+  background-position: center calc(100% + 2px);
+  background-size: 110%;
+  background-repeat: no-repeat;
+}
+
+.bg-footer {
+  background-color: #c12021;
+  margin: -2px;
 }

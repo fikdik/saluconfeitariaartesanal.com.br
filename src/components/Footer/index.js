@@ -7,7 +7,7 @@ import Signature from "./Signature"
 
 export default function Footer() {
   return (
-    <div className="bg-gray-800 pt-6">
+    <div className="bg-footer pt-6">
       <div className="container flex flex-wrap text-gray-200">
         <div className="footer-col">
           <img src="/img/salu-logo-bbg.svg" alt="Salu logo" />
