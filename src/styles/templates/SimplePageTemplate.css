@@ -2,7 +2,7 @@
   @apply px-6 py-10 rounded-lg;
   background-color: rgba(255, 255, 255, 0.6);
   & h2 {
-    @apply font-bold text-2xl mt-2 pt-1;
+    @apply font-bold text-2xl mt-2 pt-1 font-serif;
     border-top: 1px dotted red;
   }
 }
@@ -10,7 +10,7 @@
 .bg-svg {
   @apply pb-6;
   background-image: url("/img/bg-mask.svg");
-  background-position: center calc(100% + 2px);
-  background-size: 110%;
+  background-position: bottom;
+  background-size: 108%;
   background-repeat: no-repeat;
 }

@@ -44,7 +44,7 @@
     @apply flex flex-col flex-auto items-start justify-center;
 
     & svg {
-      @apply h-10 w-10 ml-2;
+      @apply h-8 w-8 mr-4;
       float: rigth;
     }
     & div {
