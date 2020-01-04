@@ -1,5 +1,10 @@
+.bg-footer {
+  background: linear-gradient(180deg, #c12021, #720000);
+  margin: -2px;
+}
+
 .footer-col {
-  @apply p-4 flex flex-col flex-auto text-white;
+  @apply p-4 flex flex-col flex-auto text-gray-300;
 
   @screen md {
     max-width: 33%;
@@ -14,9 +19,9 @@
   }
 
   & > header {
-    @apply font-bold pl-4 mb-1;
+    @apply font-bold pb-2 mb-2 text-white;
     font-size: 1.23rem;
-    border-left: 3px solid red;
+    border-bottom: 3px solid white;
   }
 
   & a {
@@ -39,7 +44,11 @@
     @apply flex flex-col flex-auto items-start justify-center;
 
     & svg {
-      @apply text-red-800 h-10 w-10 mr-2;
+      @apply h-10 w-10 ml-2;
+      float: rigth;
+    }
+    & div {
+      @apply flex-auto;
     }
 
     & a {

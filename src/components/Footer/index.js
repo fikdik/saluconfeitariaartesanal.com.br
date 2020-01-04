@@ -37,27 +37,27 @@ export default function Footer() {
           <header>Contato</header>
           <dl>
             <SmartLink>
-              <SVGIcon name="map-marker-alt" />
               <div>
                 <dt>Endereço</dt>
                 <dd>
                   Av. Dr Herman Mondenese Wanderley, 655, 1 - Jardim Camburi
                 </dd>
               </div>
+              <SVGIcon name="map-marker-alt" />
             </SmartLink>
             <SmartLink>
-              <SVGIcon name="phone" />
               <div>
                 <dt>Telefone / Whatsapp</dt>
                 <dd>27 9 9625.0970</dd>
               </div>
+              <SVGIcon name="phone" />
             </SmartLink>
             <SmartLink>
-              <SVGIcon name="envelope" />
               <div>
                 <dt>Email</dt>
                 <dd>saluconfeitariaartesanal@gmail.com</dd>
               </div>
+              <SVGIcon name="envelope" />
             </SmartLink>
           </dl>
         </div>
