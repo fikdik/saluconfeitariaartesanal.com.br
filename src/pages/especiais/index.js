@@ -6,7 +6,7 @@ import SimpleForm from "~/components/SimpleForm"
 import Layout from "~/layouts/Layout"
 import SimplePageTemplate from "~/templates/SimplePageTemplate"
 
-export default function HomePage({ data }) {
+export default function EspeciaisPage({ data }) {
   const { frontmatter, html } = data.markdownRemark
   return (
     <Layout>
@@ -15,7 +15,7 @@ export default function HomePage({ data }) {
   )
 }
 
-HomePage.propTypes = {
+EspeciaisPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -26,7 +26,7 @@ HomePage.propTypes = {
 export const bolosPageQuery = graphql`
 {
   markdownRemark(
-    fileAbsolutePath: { regex: "/.*/content/pages/bolos\\.md$/" }
+    fileAbsolutePath: { regex: "/.*/content/pages/especiais\\.md$/" }
   ) {
     html
     frontmatter {
@@ -34,7 +34,7 @@ export const bolosPageQuery = graphql`
       galery {
         picture {
           childImageSharp {
-          fluid(maxWidth: 600, quality: 75) {
+          fluid(maxWidth: 900, quality: 100) {
             ...GatsbyImageSharpFluid
             }
           }

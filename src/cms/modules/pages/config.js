@@ -58,7 +58,57 @@ const bolosFields = {
       label: "Galery",
       name: "galery",
       widget: "list",
-      fields: [{ label: "Picture", name: "picture", widget: "image" }],
+      fields: [
+        { label: "Label", name: "label", widget: "string", required: false },
+        { label: "Picture", name: "picture", widget: "image" },
+      ],
+    },
+    { label: "Body", name: "body", widget: "markdown" },
+  ],
+}
+
+const especiaisFields = {
+  file: "content/pages/especiais.md",
+  label: "Especiais",
+  name: "especiais",
+  fields: [
+    { label: "Title", name: "title", widget: "string" },
+    {
+      label: "Galery",
+      name: "galery",
+      widget: "list",
+      fields: [
+        { label: "Label", name: "label", widget: "string", required: false },
+        { label: "Picture", name: "picture", widget: "image" },
+      ],
+    },
+    { label: "Body", name: "body", widget: "markdown" },
+  ],
+}
+
+const coffeebreakFields = {
+  file: "content/pages/coffee-break.md",
+  label: "Coffee Break",
+  name: "coffee-break",
+  fields: [
+    { label: "Title", name: "title", widget: "string" },
+    {
+      label: "Texts",
+      name: "texts",
+      widget: "list",
+      fields: [{ label: "Paragraph", name: "paragraph", widget: "string" }],
+    },
+    {
+      label: "Cards",
+      name: "cards",
+      widget: "list",
+      fields: [
+        { label: "Label", name: "label", widget: "string" },
+        { label: "Description", name: "description", widget: "string" },
+        { label: "Icon", name: "icon", widget: "image" },
+        { label: "Link Text", name: "linkText", widget: "string" },
+        { label: "Link Url", name: "linkUrl", widget: "string" },
+      ],
     },
     { label: "Body", name: "body", widget: "markdown" },
   ],
@@ -67,5 +117,5 @@ const bolosFields = {
 export default {
   label: "Pages",
   name: "pages",
-  files: [homeFields, bolosFields],
+  files: [homeFields, bolosFields, especiaisFields, coffeebreakFields],
 }

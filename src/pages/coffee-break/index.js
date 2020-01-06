@@ -4,18 +4,20 @@ import PropTypes from "prop-types"
 
 import SimpleForm from "~/components/SimpleForm"
 import Layout from "~/layouts/Layout"
-import SimplePageTemplate from "~/templates/SimplePageTemplate"
+import CoffeeBreakPageTemplate from "~/templates/CoffeeBreakPageTemplate"
 
-export default function HomePage({ data }) {
+export default function CoffeBreakPage({ data }) {
   const { frontmatter, html } = data.markdownRemark
   return (
     <Layout>
-      <SimplePageTemplate data={{ ...frontmatter, html, SForm: SimpleForm }} />
+      <CoffeeBreakPageTemplate
+        data={{ ...frontmatter, html, SForm: SimpleForm }}
+      />
     </Layout>
   )
 }
 
-HomePage.propTypes = {
+CoffeBreakPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -26,21 +28,22 @@ HomePage.propTypes = {
 export const bolosPageQuery = graphql`
 {
   markdownRemark(
-    fileAbsolutePath: { regex: "/.*/content/pages/bolos\\.md$/" }
+    fileAbsolutePath: { regex: "/.*/content/pages/coffee-break\\.md$/" }
   ) {
-    html
     frontmatter {
       title
-      galery {
-        picture {
-          childImageSharp {
-          fluid(maxWidth: 600, quality: 75) {
-            ...GatsbyImageSharpFluid
-            }
-          }
-        }
+      texts {
+        paragraph
+      }
+      cards {
+        label
+        description
+        icon
+        linkText
+        linkUrl
       }
     }
+    html
   }
 }
 `

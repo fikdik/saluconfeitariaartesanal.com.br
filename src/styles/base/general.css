@@ -1,5 +1,5 @@
 .btn {
-  @apply py-8 px-10 rounded;
+  @apply py-4 px-10 border-2 border-yellow-400 bg-yellow-600 text-white rounded-lg;
 
   boder: 1px solid #fff;
 }

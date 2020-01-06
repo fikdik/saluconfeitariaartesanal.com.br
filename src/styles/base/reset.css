@@ -10,3 +10,7 @@ textarea {
 #___gatsby {
   overflow: hidden;
 }
+
+* {
+  letter-spacing: 0.125rem;
+}
