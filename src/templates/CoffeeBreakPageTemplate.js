@@ -24,11 +24,11 @@ export default function CoffeeBreakPageTemplate({ data }) {
                   key={card.title}
                 >
                   <div className="block">
-                    <img
-                      className="block h-32"
-                      src={card.icon}
+                    <Img
+                      className="w-32 h-auto"
+                      fluid={card.icon.childImageSharp.fluid}
                       alt={card.title}
-                    ></img>
+                    ></Img>
                   </div>
 
                   <h2 className="my-6 text-2xl font-bold">{card.label}</h2>

@@ -38,7 +38,13 @@ export const bolosPageQuery = graphql`
       cards {
         label
         description
-        icon
+        icon {
+          childImageSharp {
+          fluid(maxWidth: 400, quality: 100) {
+            ...GatsbyImageSharpFluid
+            }
+          }
+        }
         linkText
         linkUrl
       }
