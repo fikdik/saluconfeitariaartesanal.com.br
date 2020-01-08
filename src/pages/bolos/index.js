@@ -32,6 +32,7 @@ export const bolosPageQuery = graphql`
     frontmatter {
       title
       galery {
+        label
         picture {
           childImageSharp {
           fluid(maxWidth: 900, quality: 100) {

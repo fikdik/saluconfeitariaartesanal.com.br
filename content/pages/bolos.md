@@ -1,11 +1,14 @@
 ---
-galery:
-  - picture: /img/bolo-00001.jpg
-  - picture: /img/bolo-00002.jpg
-  - picture: /img/bolo-00003.jpg
-  - picture: /img/bolo-00004.jpg
-  - picture: /img/bolo-00005.jpg
 title: Alguns De Nossos Bolos Mais Pedidos.
+galery:
+  - label: Bolo de noses
+    picture: /img/bolo-00001.jpg
+  - label: Chocolate
+    picture: /img/bolo-00003.jpg
+  - label: Goiaba
+    picture: /img/bolo-00004.jpg
+  - label: Coco
+    picture: /img/bolo-00005.jpg
 ---
 Experimente um de nossos deliciosos bolos. Não deixe de pedir o bolo como quiser, faremos o que estiver ao nosso alcance para lhe agradar.
 
