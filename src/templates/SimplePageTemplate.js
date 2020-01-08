@@ -19,7 +19,7 @@ export default function SimplePageTemplate({ data }) {
                     fluid={picture.childImageSharp.fluid}
                     alt={label}
                   ></Img>
-                  <div className="absolute bottom-0 right-0 p-2 z-10  text-2xl font-bold bg-red-800 text-gray-100">{label}</div>
+                  <div className="absolute bottom-0 right-0 py-2 pl-6 pr-3 z-10  text-xl font-bold bg-red-600 text-gray-100 rounded-tl-full">{label}</div>
                 </div>
               </div>
             ))}
@@ -28,7 +28,7 @@ export default function SimplePageTemplate({ data }) {
 
         <div className="container flex flex-wrap-reverse items-center">
           {SForm && (
-            <div className="p-4  flex-auto md:px-10">
+            <div className="p-4 flex-auto md:px-10">
               <div className="text-3xl font-bold">Encomende</div>
               <SForm></SForm>
             </div>
