@@ -1,0 +1,20 @@
+{
+  "links": [
+    {
+      "label": "Home",
+      "to": "/"
+    },
+    {
+      "label": "Bolos",
+      "to": "/bolos/"
+    },
+    {
+      "label": "Coffee Breaks",
+      "to": "/coffee-break/"
+    },
+    {
+      "label": "Especiais",
+      "to": "/especiais/"
+    }
+  ]
+}

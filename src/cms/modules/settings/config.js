@@ -30,8 +30,23 @@ const siteMetadataFields = {
   ],
 }
 
+const menuFields = {
+  file: "content/settings/menu.json",
+  label: "Menu",
+  name: "menu",
+  fields: [
+    {
+      label: "Links", name: "links", widget: "list", fields: [
+        { label: "Label", name: "label", widget: "string" },
+        { label: "to", name: "to", widget: "string", required: false },
+        { label: "href", name: "href", widget: "string", required: false },
+      ]
+    },
+  ],
+}
+
 export default {
   label: "Settings",
   name: "settings",
-  files: [manifestFields, siteMetadataFields],
+  files: [manifestFields, siteMetadataFields, menuFields],
 }

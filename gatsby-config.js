@@ -8,6 +8,7 @@ module.exports = {
       resolve: "gatsby-plugin-root-import",
       options: {
         "~": `${__dirname}/src`,
+        "content": `${__dirname}/content`,
       },
     },
     `gatsby-plugin-react-helmet`,
