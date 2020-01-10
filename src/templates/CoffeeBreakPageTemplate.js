@@ -11,7 +11,7 @@ export default function CoffeeBreakPageTemplate({ data }) {
       </div>
       <div className="bg-svg">
         <div className="container">
-          <div className="">
+          <div className="re">
             {texts.map(({ paragraph }, index) => (
               <p key={index}>{paragraph}</p>
             ))}
