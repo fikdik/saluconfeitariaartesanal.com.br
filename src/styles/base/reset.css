@@ -14,3 +14,7 @@ textarea {
 * {
   letter-spacing: 0.075rem;
 }
+
+p {
+  @apply mb-4;
+}

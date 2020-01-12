@@ -1,4 +1,4 @@
-const tailwindcss = (module.exports = {
+module.exports = {
   plugins: [
     require(`postcss-import`),
     require(`tailwindcss`),
@@ -9,4 +9,4 @@ const tailwindcss = (module.exports = {
         preset: `default`,
       }),
   ],
-})
+}

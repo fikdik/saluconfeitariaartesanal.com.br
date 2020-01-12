@@ -11,12 +11,12 @@ export default function CoffeeBreakPageTemplate({ data }) {
       </div>
       <div className="bg-svg">
         <div className="container">
-          <div className="re">
+          <div className="responsive-columns">
             {texts.map(({ paragraph }, index) => (
               <p key={index}>{paragraph}</p>
             ))}
           </div>
-          <div className="flex flex-wrap">
+          <div className="flex flex-wrap mb-20">
             {cards.map(card => (
               <div className="py-2 flex flex-auto text-gray-700 md:w-1/2 md:p-2">
                 <div
@@ -33,11 +33,6 @@ export default function CoffeeBreakPageTemplate({ data }) {
 
                   <h2 className="my-6 text-2xl font-bold">{card.label}</h2>
                   <p className="my-6">{card.description}</p>
-                  {/* <Img
-                className="w-32"
-                fluid={card.icon.childImageSharp.fluid}
-                alt={card.title}
-              ></Img> */}
                   <a class="btn uppercase" href={card.linkUrl}>
                     {card.linkText}
                   </a>
