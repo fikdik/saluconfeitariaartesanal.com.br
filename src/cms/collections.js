@@ -1,11 +1,10 @@
-import pages from "./modules/pages/config.js"
-import pagesRegisterPreview from "./modules/pages/preview"
-import settings from "./modules/settings/config.js"
-import share from "./modules/share/config.js"
-import theme from "./modules/theme/config.js"
+const reqConfig = require.context("./modules/", true, /config.js$/)
+const reqPreview = require.context("./modules/", true, /preview.js$/)
 
-export const collections = [pages, share, theme, settings]
+export const collections = reqConfig.keys().map(path => reqConfig(path).default)
 
 export function registerPreviews() {
-  pagesRegisterPreview()
+  reqPreview.keys().map(path => {
+    reqPreview(path).default()
+  })
 }

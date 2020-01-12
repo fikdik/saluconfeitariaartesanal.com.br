@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 
+import menu from "content/settings/menu.json"
+
 import SmartLink from "~/components/SmartLink"
 
 import BurgerMenu from "./BurgerMenu"
-
-import menu from "content/settings/menu.json"
 
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false)
@@ -26,7 +26,7 @@ export default function Navbar() {
       <nav
         className={`px-2 pt-2 pb-4 text-center sm:flex sm:p-0 ${
           navbarOpen ? "block" : "hidden"
-          }`}
+        }`}
       >
         {menu.links.map(link => (
           <SmartLink
@@ -34,7 +34,9 @@ export default function Navbar() {
             className="mt-1 block px-2 py-1 text-black font-semibold uppercase border-b-2 border-transparent hover:border-red-500 sm:mt-0 sm:ml-2"
             to={link.to}
             href={link.href}
-          >{link.label}</SmartLink>
+          >
+            {link.label}
+          </SmartLink>
         ))}
       </nav>
     </div>

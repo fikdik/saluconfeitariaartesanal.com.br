@@ -1,0 +1,23 @@
+{
+  "file": "content/pages/bolos.md",
+  "label": "Bolos",
+  "name": "bolos",
+  "fields": [
+    { "label": "Title", "name": "title", "widget": "string" },
+    {
+      "label": "Galery",
+      "name": "galery",
+      "widget": "list",
+      "fields": [
+        {
+          "label": "Label",
+          "name": "label",
+          "widget": "string",
+          "required": false
+        },
+        { "label": "Picture", "name": "picture", "widget": "image" }
+      ]
+    },
+    { "label": "Body", "name": "body", "widget": "markdown" }
+  ]
+}

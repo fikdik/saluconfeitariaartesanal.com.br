@@ -1,0 +1,11 @@
+{
+  "file": "content/settings/siteMetadata.json",
+  "label": "Site Metadata",
+  "name": "siteMetadata",
+  "fields": [
+    { "label": "Title", "name": "title", "widget": "string" },
+    { "label": "Site Url", "name": "siteUrl", "widget": "string" },
+    { "label": "Short Slogan", "name": "slogan", "widget": "string" },
+    { "label": "Short Description", "name": "description", "widget": "string" }
+  ]
+}
