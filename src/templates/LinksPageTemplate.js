@@ -5,14 +5,15 @@ import SmartLink from "~/components/SmartLink"
 export default function LinksPageTemplate({ data }) {
   const { links } = data
   return (
-    <main className="flex-auto">
-      <div className="py-6 container flex flex-wrap text-white">
+    <main className="t-links">
+      <div className="py-6 mx-auto max-w-4xl flex flex-col items-center">
         {links.map(link => (
-          <SmartLink url={link.url} key={link.url}>
+          <SmartLink className="link" url={link.url} key={link.url}>
             {link.label}
           </SmartLink>
         ))}
       </div>
+      <div className="mx-auto max-w-3xl">Redes Sociais</div>
     </main>
   )
 }

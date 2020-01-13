@@ -1,0 +1,11 @@
+.t-links {
+  @apply flex-auto flex flex-col;
+
+  & .link {
+    @apply px-8 py-4 mb-8 w-full text-center rounded-full bg-gray-300;
+    transition: transform ease 200ms;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

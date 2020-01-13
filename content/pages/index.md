@@ -10,7 +10,7 @@ flipcards:
     front:
       icon: smile
       img: /img/bolo-00002.jpg
-      title: Bolos Apaixonantes
+    label: Bolos Apaixonantes
   - back:
       description: O coffee break para seu evento
       link: /coffee-break/
@@ -19,7 +19,7 @@ flipcards:
     front:
       icon: coffee
       img: /img/coffee-00001.jpg
-      title: Coffee Breaks
+    label: Coffee Breaks
   - back:
       description: Peça aquela encomenda para o seu dia especial.
       link: /especiais/
@@ -28,5 +28,5 @@ flipcards:
     front:
       icon: gift
       img: /img/especial-00001.jpg
-      title: Presentes Especiais
+    label: Presentes Especiais
 ---

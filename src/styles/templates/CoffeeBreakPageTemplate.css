@@ -1,5 +1,10 @@
 .responsive-columns {
   @apply p-2 my-4;
+
+  @screen sm {
+    columns: 2;
+  }
+
   @screen md {
     columns: 3;
   }

@@ -4,7 +4,7 @@ import SmartLink from "~/components/SmartLink"
 import SVGIcon from "~/components/SVGIcon"
 
 export default function FlipCard({ data, key }) {
-  const { front, back } = data
+  const { label, front, back } = data
   const image = useMemo(
     () =>
       front && front.img && front.img.childImageSharp
@@ -27,7 +27,7 @@ export default function FlipCard({ data, key }) {
               style={{ backgroundColor: "rgba(0,0,0,0.3)" }}
             >
               <SVGIcon className="h-16 w-16" name={front?.icon}></SVGIcon>
-              <span className="text-xl font-bold">{front?.title}</span>
+              <span className="text-xl font-bold">{label}</span>
             </div>
           </div>
         </div>

@@ -29,6 +29,7 @@ export const pageQuery = graphql`
   ) {
     frontmatter {
       flipcards {
+        label
         back {
           description
           link
@@ -36,11 +37,10 @@ export const pageQuery = graphql`
           title
         }
         front {
-          title
           icon
           img {
             childImageSharp {
-              fluid(maxWidth: 600, quality: 75) {
+              fluid(maxWidth: 600, quality: 85) {
                 ...GatsbyImageSharpFluid
               }
             }

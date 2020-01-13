@@ -8,12 +8,12 @@
       "name": "flipcards",
       "widget": "list",
       "fields": [
+        { "label": "Label", "name": "label", "widget": "string" },
         {
           "name": "front",
           "widget": "object",
           "label": "Front",
           "fields": [
-            { "name": "title", "widget": "string", "label": "Title" },
             {
               "name": "icon",
               "widget": "select",
