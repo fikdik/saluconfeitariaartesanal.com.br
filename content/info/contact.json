@@ -1,0 +1,19 @@
+{
+  "contacts": [
+    {
+      "label": "Endereço",
+      "type": "address",
+      "description": "Av. Dr Herman Mondenese Wanderlay, 655, 1 - Jardim Camburi"
+    },
+    {
+      "label": "Telefone / Whatsapp",
+      "type": "whatsapp",
+      "description": "(27) 99625.0970"
+    },
+    {
+      "label": "Email",
+      "type": "email",
+      "description": "saluconfeitariaartesanal@gmail.com"
+    }
+  ]
+}

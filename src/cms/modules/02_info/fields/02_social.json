@@ -1,7 +1,7 @@
 {
   "label": "Social Network",
-  "name": "socialNetwork",
-  "file": "content/share/social.json",
+  "name": "social",
+  "file": "content/info/social.json",
   "fields": [
     {
       "label": "Social Url",

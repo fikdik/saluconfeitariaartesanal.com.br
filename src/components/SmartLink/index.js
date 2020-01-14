@@ -4,10 +4,10 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 
 const SmartLink = React.forwardRef((props, ref) => {
-  const link = props.href || props.to || "/"
+  const link = props.href || props.to || props.url || "/"
   return (
     <>
-      {link.startsWith("/") ? (
+      {link.startsWith("/") && !link.startsWith("//") ? (
         <Link
           component={Link}
           ref={ref}
@@ -18,7 +18,13 @@ const SmartLink = React.forwardRef((props, ref) => {
           {props.children}
         </Link>
       ) : (
-        <a ref={ref} target="_blank" href={link} {...props}>
+        <a
+          ref={ref}
+          target="_blank"
+          rel="noopener noreferrer"
+          href={link}
+          {...props}
+        >
           {props.children}
         </a>
       )}

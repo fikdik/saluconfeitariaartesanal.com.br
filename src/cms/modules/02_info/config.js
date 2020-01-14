@@ -4,7 +4,7 @@ const paths = reqFields.keys()
 const fields = paths.map(path => reqFields(path))
 
 export default {
-  label: "Share",
-  name: "share",
+  label: "Info",
+  name: "info",
   files: fields,
 }

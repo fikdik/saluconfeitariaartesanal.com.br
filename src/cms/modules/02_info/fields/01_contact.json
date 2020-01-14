@@ -1,0 +1,22 @@
+{
+  "label": "Contact Info",
+  "name": "contact",
+  "file": "content/info/contact.json",
+  "fields": [
+    {
+      "label": "Contacts",
+      "name": "contacts",
+      "widget": "list",
+      "fields": [
+        { "label": "Label", "name": "label", "widget": "string" },
+        {
+          "label": "Type",
+          "name": "type",
+          "widget": "select",
+          "options": ["address", "phone", "email", "whatsapp"]
+        },
+        { "label": "Description", "name": "description", "widget": "string" }
+      ]
+    }
+  ]
+}
