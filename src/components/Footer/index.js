@@ -39,21 +39,21 @@ export default function Footer() {
         <div className="footer-col">
           <header>Contato</header>
           <dl>
-            <SmartLink url="https://www.google.com/maps/place/Sal%C3%BA+Confeitaria+Artesanal/@-20.2503748,-40.2726554,17z/data=!3m1!4b1!4m5!3m4!1s0xb819a814e6cb6b:0x86e4aa1c4e2ceb81!8m2!3d-20.2503748!4d-40.2704667">
+            <SmartLink to={address.url}>
               <SVGIcon className="md:hidden lg:block" name="map-marker-alt" />
               <div>
                 <dt>{address.label}</dt>
                 <dd>{address.description}</dd>
               </div>
             </SmartLink>
-            <SmartLink url="https://api.whatsapp.com/send?phone=+5527996250970&text=Ol%C3%A1%20Salu%20Confeitaria%20Artesanal">
+            <SmartLink to={phone.url}>
               <SVGIcon className="md:hidden lg:block" name="phone" />
               <div>
                 <dt>{phone.label}</dt>
                 <dd>{phone.description}</dd>
               </div>
             </SmartLink>
-            <SmartLink url={`mailto:${email.description}`}>
+            <SmartLink to={email.url}>
               <SVGIcon className="md:hidden lg:block" name="envelope" />
               <div>
                 <dt>{email.label}</dt>
