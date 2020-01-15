@@ -2,19 +2,19 @@
   "links": [
     {
       "label": "Home",
-      "to": "/"
+      "url": "/"
     },
     {
       "label": "Bolos",
-      "to": "/bolos/"
+      "url": "/bolos/"
     },
     {
       "label": "Coffee Breaks",
-      "to": "/coffee-break/"
+      "url": "/coffee-break/"
     },
     {
       "label": "Especiais",
-      "to": "/especiais/"
+      "url": "/especiais/"
     }
   ]
 }

@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 
 const SmartLink = React.forwardRef((props, ref) => {
-  const link = props.href || props.to || props.url || "/"
+  const link = props.to || "/"
   return (
     <>
       {link.startsWith("/") && !link.startsWith("//") ? (

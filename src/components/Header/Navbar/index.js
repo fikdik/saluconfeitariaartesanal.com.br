@@ -32,8 +32,7 @@ export default function Navbar() {
           <SmartLink
             key={link.label}
             className="mt-1 block px-2 py-1 text-black font-semibold uppercase border-b-2 border-transparent hover:border-red-500 sm:mt-0 sm:ml-2"
-            to={link.to}
-            href={link.href}
+            to={link.url}
           >
             {link.label}
           </SmartLink>

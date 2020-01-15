@@ -9,13 +9,7 @@
       "widget": "list",
       "fields": [
         { "label": "Label", "name": "label", "widget": "string" },
-        { "label": "to", "name": "to", "widget": "string", "required": false },
-        {
-          "label": "href",
-          "name": "href",
-          "widget": "string",
-          "required": false
-        }
+        { "label": "URL", "name": "url", "widget": "string" }
       ]
     }
   ]
