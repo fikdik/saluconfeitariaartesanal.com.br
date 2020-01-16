@@ -1,3 +1,4 @@
+import manifest from "content/settings/manifest.json"
 import CMS from "netlify-cms-app"
 import FileSystemBackend from "netlify-cms-backend-fs"
 import cloudinary from "netlify-cms-media-library-cloudinary"
@@ -7,6 +8,8 @@ import { collections, registerPreviews } from "./collections"
 
 const config = {
   display_url: window.location.origin,
+  logo_url: manifest.icon,
+
   collections,
 }
 

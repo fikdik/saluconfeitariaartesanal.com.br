@@ -1,0 +1,6 @@
+{
+  "file": "content/settings/analytics.json",
+  "label": "Analytics",
+  "name": "analytics",
+  "fields": [{ "label": "Track ID", "name": "trackingId", "widget": "string" }]
+}

@@ -1,14 +1,16 @@
+const analytics = require("./content/settings/analytics.json")
 const manifest = require("./content/settings/manifest.json")
 const siteMetadata = require("./content/settings/siteMetadata.json")
 
 module.exports = {
   siteMetadata,
   plugins: [
+    `gatsby-plugin-netlify`,
     {
-      resolve: "gatsby-plugin-root-import",
+      resolve: `gatsby-plugin-root-import`,
       options: {
         "~": `${__dirname}/src`,
-        "content": `${__dirname}/content`,
+        content: `${__dirname}/content`,
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -31,17 +33,17 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-svg-sprite`,
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-relative-images",
+            resolve: `gatsby-remark-relative-images`,
             options: {
               name: "uploads",
             },
           },
           {
-            resolve: "gatsby-remark-images",
+            resolve: `gatsby-remark-images`,
             options: {
               quality: 100,
               maxWidth: 1600,
@@ -79,17 +81,20 @@ module.exports = {
         ],
       },
     },
+
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it
-        trackingId: "UA-CHANGEME",
+        trackingId:
+          process.env.NODE_ENV === "production" ? analytics.trackingId : "",
         // Setting this parameter is optional
         anonymize: false,
         // Delays sending pageview hits on route update (in milliseconds)
         pageTransitionDelay: 0,
       },
     },
+
     {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
@@ -109,6 +114,6 @@ module.exports = {
       },
     },
 
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }
