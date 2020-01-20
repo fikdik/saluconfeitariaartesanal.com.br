@@ -6,7 +6,7 @@
     {
       "label": "Color",
       "name": "color",
-      "widget": "list",
+      "widget": "object",
       "fields": [
         { "label": "Name", "name": "name", "widget": "string" },
         {

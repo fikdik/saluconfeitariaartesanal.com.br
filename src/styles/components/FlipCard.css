@@ -27,7 +27,6 @@
 .flip-card-back {
   @apply w-full h-full absolute rounded;
   backface-visibility: hidden;
-  background-color: #bbb;
 }
 
 /* Style the back side */

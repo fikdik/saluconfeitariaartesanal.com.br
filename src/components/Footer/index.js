@@ -10,7 +10,7 @@ import Signature from "./Signature"
 export default function Footer() {
   const [address, phone, email] = contacts
   return (
-    <div className="bg-footer pt-6">
+    <div className="bg-footer pt-6 bg-footer-colorBG">
       <div className="container flex flex-wrap text-gray-200">
         <div className="footer-col">
           <img src="/img/salu-logo-bbg.svg" alt="Salu logo" />

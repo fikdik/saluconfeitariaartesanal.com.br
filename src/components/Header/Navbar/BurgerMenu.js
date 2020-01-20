@@ -4,9 +4,9 @@ const BurgerMenu = props => {
   return (
     <div className="burger-menu" onClick={props.toggleNavbar}>
       <div className={props.navbarOpen ? "open" : ""}>
-        <span>&nbsp;</span>
-        <span>&nbsp;</span>
-        <span>&nbsp;</span>
+        <span className="bg-navBar-colorBurguer">&nbsp;</span>
+        <span className="bg-navBar-colorBurguer">&nbsp;</span>
+        <span className="bg-navBar-colorBurguer">&nbsp;</span>
       </div>
     </div>
   )

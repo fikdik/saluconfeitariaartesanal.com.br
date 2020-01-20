@@ -35,7 +35,7 @@ export default function FlipCard({ data, key }) {
           <div className="bg-red-600 h-full p-4 flex flex-col justify-around items-center rounded-lg">
             <h3 className="font-bold text-xl">{back?.title}</h3>
             <div>{back?.description}</div>
-            <SmartLink className="btn" to={back?.link}>
+            <SmartLink className="btn " to={back?.link}>
               {back?.linkText || "Saiba Mais..."}
             </SmartLink>
           </div>

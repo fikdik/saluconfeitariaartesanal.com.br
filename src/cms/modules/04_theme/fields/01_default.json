@@ -25,6 +25,11 @@
         { "label": "Link Color", "name": "colorLink", "widget": "string" },
         { "label": "Hover Color", "name": "colorHover", "widget": "string" },
         { "label": "Active Color", "name": "colorActive", "widget": "string" },
+        {
+          "label": "Border Bottom Color",
+          "name": "colorBorderBottom",
+          "widget": "string"
+        },
         { "label": "Shadow", "name": "shadow", "widget": "string" }
       ]
     },
@@ -48,17 +53,6 @@
         { "label": "Background Color", "name": "colorBG", "widget": "string" },
         { "label": "Link Color", "name": "colorLink", "widget": "string" },
         { "label": "Hover Color", "name": "colorHover", "widget": "string" }
-      ]
-    },
-    {
-      "label": "Signature",
-      "name": "signature",
-      "widget": "object",
-      "fields": [
-        { "label": "Background Color", "name": "colorBG", "widget": "string" },
-        { "label": "Text Color", "name": "colorText", "widget": "string" },
-        { "label": "Dev Color 1", "name": "devColor1", "widget": "string" },
-        { "label": "Dev Color 2", "name": "devColor2", "widget": "string" }
       ]
     }
   ]

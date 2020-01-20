@@ -12,6 +12,7 @@
     "colorLink": "#443827",
     "colorHover": "#3B2218",
     "colorActive": "#0F0",
+    "colorBorderBottom": "#f8CC8F",
     "shadow": "0"
   },
   "mainContent": {
@@ -25,11 +26,5 @@
     "colorBG": "linear-gradient(180deg, #c12021, #720000)",
     "colorLink": "#E2E2E2",
     "colorHover": "#FFFFFF"
-  },
-  "signature": {
-    "colorBG": "#000",
-    "colorText": "#D0D0D0",
-    "devColor1": "#dd922c",
-    "devColor2": "#a31216"
   }
 }

@@ -1,5 +1,10 @@
 .bg-footer {
-  background: linear-gradient(180deg, #c12021, #720000);
+  /* background: linear-gradient(180deg, #c12021, #720000); */
+  background: linear-gradient(
+    180deg,
+    theme("colors.blue.500"),
+    theme("colors.blue.900")
+  );
   margin: -2px;
 }
 

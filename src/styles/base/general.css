@@ -1,8 +1,7 @@
 .btn {
-  @apply py-2 px-6 border-2 border-yellow-600 bg-yellow-500 text-white rounded-lg shadow-md;
+  @apply py-2 px-6 border-2 rounded-lg shadow-md;
   &:hover {
     @apply shadow-xl;
-    transform: translateY(-2px);
   }
   &:active {
     @apply shadow-none;
