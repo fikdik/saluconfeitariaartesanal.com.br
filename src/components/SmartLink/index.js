@@ -12,8 +12,7 @@ const SmartLink = React.forwardRef((props, ref) => {
           component={Link}
           ref={ref}
           to={link}
-          {...props}
-          activeClassName="active"
+          {...{ activeClassName: "active", ...props }}
         >
           {props.children}
         </Link>

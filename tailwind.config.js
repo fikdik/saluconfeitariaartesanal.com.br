@@ -1,5 +1,7 @@
 // See https://tailwindcss.com/docs/configuration for details
 
+const themeDefault = require("./content/theme/default.json")
+
 module.exports = {
   theme: {
     fontFamily: {
@@ -12,13 +14,9 @@ module.exports = {
         "Arial",
         '"Noto Sans"',
         "sans-serif",
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Noto Color Emoji"',
       ],
       serif: [
-        "Lobster Two",
+        '"Lobster Two"',
         "Georgia",
         "Cambria",
         '"Times New Roman"',
@@ -29,6 +27,11 @@ module.exports = {
     container: {
       center: true,
       padding: "1rem",
+    },
+    extend: {
+      colors: {
+        ...themeDefault,
+      },
     },
   },
   variants: {},

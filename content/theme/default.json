@@ -1,0 +1,35 @@
+{
+  "topBar": {
+    "colorBG": "#C21C20",
+    "colorText": "#fff",
+    "colorLink": "#f8CC8F",
+    "colorHover": "#D87A55"
+  },
+  "navBar": {
+    "logo": "/img/salu-logo.svg",
+    "colorBG": "transparent",
+    "colorBurger": "#00F",
+    "colorLink": "#443827",
+    "colorHover": "#3B2218",
+    "colorActive": "#0F0",
+    "shadow": "0"
+  },
+  "mainContent": {
+    "colorBG": "#F2F2F2",
+    "colorText": "#2F2F2F",
+    "colorLink": "#D87A55",
+    "colorHover": "#E41A28"
+  },
+  "footer": {
+    "logo": "/img/salu-logo-bbg.svg",
+    "colorBG": "linear-gradient(180deg, #c12021, #720000)",
+    "colorLink": "#E2E2E2",
+    "colorHover": "#FFFFFF"
+  },
+  "signature": {
+    "colorBG": "#000",
+    "colorText": "#D0D0D0",
+    "devColor1": "#dd922c",
+    "devColor2": "#a31216"
+  }
+}

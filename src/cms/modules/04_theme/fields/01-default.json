@@ -1,0 +1,65 @@
+{
+  "label": "Default Theme",
+  "name": "default",
+  "file": "content/theme/default.json",
+  "fields": [
+    {
+      "label": "Top Bar",
+      "name": "topBar",
+      "widget": "object",
+      "fields": [
+        { "label": "Background Color", "name": "colorBG", "widget": "string" },
+        { "label": "Text Color", "name": "colorText", "widget": "string" },
+        { "label": "Link Color", "name": "colorLink", "widget": "string" },
+        { "label": "Hover Color", "name": "colorHover", "widget": "string" }
+      ]
+    },
+    {
+      "label": "Nav Bar",
+      "name": "navBar",
+      "widget": "object",
+      "fields": [
+        { "label": "Logo", "name": "logo", "widget": "image" },
+        { "label": "Background Color", "name": "colorBG", "widget": "string" },
+        { "label": "Burguer Color", "name": "colorBurger", "widget": "string" },
+        { "label": "Link Color", "name": "colorLink", "widget": "string" },
+        { "label": "Hover Color", "name": "colorHover", "widget": "string" },
+        { "label": "Active Color", "name": "colorActive", "widget": "string" },
+        { "label": "Shadow", "name": "shadow", "widget": "string" }
+      ]
+    },
+    {
+      "label": "Main Content",
+      "name": "mainContent",
+      "widget": "object",
+      "fields": [
+        { "label": "Background Color", "name": "colorBG", "widget": "string" },
+        { "label": "Text Color", "name": "colorText", "widget": "string" },
+        { "label": "Link Color", "name": "colorLink", "widget": "string" },
+        { "label": "Hover Color", "name": "colorHover", "widget": "string" }
+      ]
+    },
+    {
+      "label": "Footer",
+      "name": "footer",
+      "widget": "object",
+      "fields": [
+        { "label": "Logo", "name": "logo", "widget": "image" },
+        { "label": "Background Color", "name": "colorBG", "widget": "string" },
+        { "label": "Link Color", "name": "colorLink", "widget": "string" },
+        { "label": "Hover Color", "name": "colorHover", "widget": "string" }
+      ]
+    },
+    {
+      "label": "Signature",
+      "name": "signature",
+      "widget": "object",
+      "fields": [
+        { "label": "Background Color", "name": "colorBG", "widget": "string" },
+        { "label": "Text Color", "name": "colorText", "widget": "string" },
+        { "label": "Dev Color 1", "name": "devColor1", "widget": "string" },
+        { "label": "Dev Color 2", "name": "devColor2", "widget": "string" }
+      ]
+    }
+  ]
+}

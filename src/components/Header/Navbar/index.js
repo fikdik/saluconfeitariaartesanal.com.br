@@ -12,8 +12,8 @@ export default function Navbar() {
     setNavbarOpen(!navbarOpen)
   }
   return (
-    <div className="container navbar">
-      <div className="navbar-container">
+    <div className="bg-navBar-colorBG container flex justify-between items-center px-4 py-3">
+      <div className="flex items-center justify-between px-4 py-3 sm:p-0">
         <div>
           <SmartLink to="/">
             <img className="h-16" src="/img/salu-logo.svg" alt="the brand" />
@@ -31,7 +31,8 @@ export default function Navbar() {
         {menu.links.map(link => (
           <SmartLink
             key={link.label}
-            className="mt-1 block px-2 py-1 text-black font-semibold uppercase border-b-2 border-transparent hover:border-red-500 sm:mt-0 sm:ml-2"
+            className="text-navBar-colorLink mt-1 block px-2 py-1 font-semibold uppercase hover:text-navBar-colorHover border-b-2 border-transparent hover:border-red-500 sm:mt-0 sm:ml-2"
+            activeClassName="text-navBar-colorActive"
             to={link.url}
           >
             {link.label}

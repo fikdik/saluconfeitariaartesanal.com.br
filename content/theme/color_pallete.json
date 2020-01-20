@@ -1,0 +1,12 @@
+{
+  "color": [
+    {
+      "color_name": "brand-primary",
+      "color_rgb": "#f00"
+    },
+    {
+      "color_name": "brad-secondary",
+      "color_rgb": "#0F0"
+    }
+  ]
+}
