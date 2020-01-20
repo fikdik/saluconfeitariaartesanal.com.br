@@ -1,7 +1,7 @@
 .signature {
   @apply text-center p-1;
   background-color: #000;
-  color: #ddd;
+  color: #aaa;
 
   & a {
     color: #dd922c;

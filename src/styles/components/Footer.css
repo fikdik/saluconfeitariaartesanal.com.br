@@ -1,15 +1,14 @@
 .bg-footer {
-  /* background: linear-gradient(180deg, #c12021, #720000); */
   background: linear-gradient(
     180deg,
-    theme("colors.blue.500"),
-    theme("colors.blue.900")
+    theme("colors.brand-2.3"),
+    theme("colors.brand-2.5")
   );
   margin: -2px;
 }
 
 .footer-col {
-  @apply p-4 flex flex-col flex-auto text-gray-300;
+  @apply p-4 flex flex-col flex-auto;
 
   @screen md {
     max-width: 33%;
@@ -20,13 +19,13 @@
   }
 
   & > span {
-    @apply mb-1 text-gray-200;
+    @apply mb-1;
   }
 
   & > header {
-    @apply font-bold pb-2 mb-2 text-white;
+    @apply font-bold pb-2 mb-2;
     font-size: 1.23rem;
-    border-bottom: 3px solid white;
+    border-bottom: 3px solid theme("colors.brand-3.3");
   }
 
   & a {
@@ -36,13 +35,13 @@
       transform: scale(1.03);
     }
     & small {
-      color: #ccc;
+      @apply text-custom-1-2;
     }
   }
   & a + a,
   & li + li {
     @apply mt-2 pt-2;
-    border-top: 1px dashed #999;
+    border-top: 1px dashed theme("colors.brand-3.3");
   }
 
   & dl {

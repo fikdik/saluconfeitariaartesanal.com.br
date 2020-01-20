@@ -2,5 +2,7 @@
   "title": "Salu",
   "siteUrl": "http://saluconfeitariaartesanal.com.br",
   "slogan": "feito com amor!",
-  "description": "Coffeebreak completo com alta qualidade. Fazemos bolos, doces e salgados."
+  "description": "Coffeebreak completo com alta qualidade. Fazemos bolos, doces e salgados.",
+  "logo": "/img/salu-logo.svg",
+  "logoAlt": "/img/salu-logo-bbg.svg"
 }

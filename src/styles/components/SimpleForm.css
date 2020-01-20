@@ -8,15 +8,15 @@
   & input,
   & textarea {
     @apply py-2 px-4 w-full rounded;
-    border: 1px solid theme("color.grey.200");
-    background-color: rgba(255, 255, 255, 0.75);
+    border: 1px solid theme("colors.custom-1.1");
+    background-color: rgba(255, 255, 255, 0.8);
 
     &::placeholder {
-      @apply text-gray-600;
+      @apply text-custom-1-4;
     }
   }
 
   & textarea {
-    @apply h-20;
+    @apply h-24;
   }
 }

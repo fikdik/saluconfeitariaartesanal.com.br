@@ -1,5 +1,6 @@
 import React from "react"
 
+import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 
 import SimpleForm from "~/components/SimpleForm"

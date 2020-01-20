@@ -13,7 +13,7 @@ export default function FlipCard({ data, key }) {
     [front]
   )
   return (
-    <div className="flip-card" key={key}>
+    <div className="flip-card text-brand-3-1" key={key}>
       <div className="flip-card-inner">
         <div className="flip-card-front">
           <div
@@ -31,11 +31,11 @@ export default function FlipCard({ data, key }) {
             </div>
           </div>
         </div>
-        <div className="flip-card-back">
-          <div className="bg-red-600 h-full p-4 flex flex-col justify-around items-center rounded-lg">
+        <div className="flip-card-back bg-brand-2-3">
+          <div className="h-full p-4 flex flex-col justify-around items-center rounded-lg">
             <h3 className="font-bold text-xl">{back?.title}</h3>
             <div>{back?.description}</div>
-            <SmartLink className="btn " to={back?.link}>
+            <SmartLink className="btn bg-brand-1-4" to={back?.link}>
               {back?.linkText || "Saiba Mais..."}
             </SmartLink>
           </div>

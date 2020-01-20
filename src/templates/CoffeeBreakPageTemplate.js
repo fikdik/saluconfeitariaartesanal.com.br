@@ -6,7 +6,7 @@ export default function CoffeeBreakPageTemplate({ data }) {
   const { title, texts, cards, html, SForm } = data
   return (
     <main className="flex-auto">
-      <div className="bg-red-700 p-6 text-center text-white text-3xl font-serif md:text-4xl">
+      <div className="bg-brand-1-4 text-brand-3-0 p-6 text-center text-3xl font-serif md:text-4xl">
         <h1>{title}</h1>
       </div>
       <div className="bg-svg">
@@ -18,9 +18,9 @@ export default function CoffeeBreakPageTemplate({ data }) {
           </div>
           <div className="flex flex-wrap mb-20">
             {cards.map(card => (
-              <div className="py-2 flex flex-auto text-gray-700 md:w-1/2 md:p-2">
+              <div className="py-2 flex flex-auto text-brand-4-6 md:w-1/2 md:p-2">
                 <div
-                  className="p-8 bg-gray-100 border-gray-300 border-2 rounded flex-auto flex flex-col items-center justify-around hover:border-green-300"
+                  className="p-8 bg-gray-100 border-gray-300 border-2 rounded flex-auto flex flex-col items-center justify-around hover:border-brand-3-3"
                   key={card.title}
                 >
                   <div className="block">
@@ -33,7 +33,10 @@ export default function CoffeeBreakPageTemplate({ data }) {
 
                   <h2 className="my-6 text-2xl font-bold">{card.label}</h2>
                   <p className="my-6">{card.description}</p>
-                  <a class="btn uppercase" href={card.linkUrl}>
+                  <a
+                    class="btn uppercase bg-brand-3-1 text-brand-1-5"
+                    href={card.linkUrl}
+                  >
                     {card.linkText}
                   </a>
                 </div>

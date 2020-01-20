@@ -10,8 +10,8 @@ import Signature from "./Signature"
 export default function Footer() {
   const [address, phone, email] = contacts
   return (
-    <div className="bg-footer pt-6 bg-footer-colorBG">
-      <div className="container flex flex-wrap text-gray-200">
+    <div className="bg-footer pt-6 text-custom-1-1">
+      <div className="container flex flex-wrap">
         <div className="footer-col">
           <img src="/img/salu-logo-bbg.svg" alt="Salu logo" />
           <span>Tudo feito com amor!</span>
@@ -37,7 +37,7 @@ export default function Footer() {
           </ul>
         </div>
         <div className="footer-col">
-          <header>Contato</header>
+          <header className="">Contato</header>
           <dl>
             <SmartLink to={address.url}>
               <SVGIcon className="md:hidden lg:block" name="map-marker-alt" />

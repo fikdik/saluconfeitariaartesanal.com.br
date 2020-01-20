@@ -1,6 +1,5 @@
 // See https://tailwindcss.com/docs/configuration for details
-
-const themeDefault = require("./content/theme/default.json")
+const pallete = require("./content/theme/pallete.json")
 
 module.exports = {
   theme: {
@@ -30,7 +29,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        ...themeDefault,
+        ...pallete,
       },
     },
   },

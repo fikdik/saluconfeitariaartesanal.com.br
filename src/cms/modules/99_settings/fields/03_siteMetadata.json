@@ -6,6 +6,13 @@
     { "label": "Title", "name": "title", "widget": "string" },
     { "label": "Site Url", "name": "siteUrl", "widget": "string" },
     { "label": "Short Slogan", "name": "slogan", "widget": "string" },
-    { "label": "Short Description", "name": "description", "widget": "string" }
+    { "label": "Short Description", "name": "description", "widget": "string" },
+    { "label": "Logo", "name": "logo", "widget": "image" },
+    {
+      "label": "Logo Alternative",
+      "name": "logoAlt",
+      "widget": "image",
+      "required": false
+    }
   ]
 }
