@@ -3,7 +3,7 @@ const fields = [
     label: "Template Key",
     name: "templateKey",
     widget: "hidden",
-    default: "blog-post",
+    default: "BlogPostTemplate",
   },
   { label: "Title", name: "title", widget: "string" },
   { label: "Publish Date", name: "date", widget: "datetime" },

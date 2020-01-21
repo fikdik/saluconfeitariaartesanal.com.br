@@ -1,6 +1,6 @@
 .simple-page-content {
   @apply px-6 py-10 rounded-lg text-brand-4-6;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid theme("colors.brand-4.2");
   & h2 {
     @apply font-bold text-2xl mt-2 pt-1 font-serif;

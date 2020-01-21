@@ -1,10 +1,12 @@
 // See https://tailwindcss.com/docs/configuration for details
+const googleFonts = require("./content/theme/google_fonts.json")
 const pallete = require("./content/theme/pallete.json")
 
 module.exports = {
   theme: {
     fontFamily: {
       sans: [
+        googleFonts.sans.family,
         "-apple-system",
         "BlinkMacSystemFont",
         '"Segoe UI"',
@@ -15,7 +17,7 @@ module.exports = {
         "sans-serif",
       ],
       serif: [
-        '"Lobster Two"',
+        googleFonts.serif.family,
         "Georgia",
         "Cambria",
         '"Times New Roman"',
