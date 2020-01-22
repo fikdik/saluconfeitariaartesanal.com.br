@@ -1,8 +1,13 @@
 ---
-title: Doces Para Ocasiões Especiais
+templateKey: pages/simple
+title: 'Doces Para Ocasiões Especiais '
 galery:
-  - picture: /img/especial-00001.jpg
-  - picture: /img/especial-00003.jpg
+  - label: Coração Branco
+    picture: /img/especial-00001.jpg
+  - label: Dois Corações
+    picture: /img/especial-00002.jpg
+  - label: Mesclado
+    picture: /img/especial-00003.jpg
 ---
 ## Doces Gourmet
 

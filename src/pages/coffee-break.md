@@ -1,4 +1,5 @@
 ---
+templateKey: pages/coffeebreak
 title: Coffee Break
 texts:
   - paragraph: >-

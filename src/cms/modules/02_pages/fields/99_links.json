@@ -1,8 +1,15 @@
 {
-  "file": "content/pages/links.md",
+  "file": "src/pages/links.md",
   "label": "Links Page",
   "name": "linksPage",
   "fields": [
+    {
+      "label": "Template Key",
+      "name": "templateKey",
+      "widget": "hidden",
+      "default": "pages/links"
+    },
+
     {
       "label": "Links",
       "name": "links",

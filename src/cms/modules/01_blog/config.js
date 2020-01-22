@@ -3,7 +3,7 @@ const fields = [
     label: "Template Key",
     name: "templateKey",
     widget: "hidden",
-    default: "BlogPostTemplate",
+    default: "blog/post",
   },
   { label: "Title", name: "title", widget: "string" },
   { label: "Publish Date", name: "date", widget: "datetime" },
@@ -22,7 +22,7 @@ const fields = [
 export default {
   label: "Blog",
   name: "blog",
-  folder: "content/blog",
+  folder: "src/pages/blog",
   create: true,
   slug: "{{year}}-{{month}}-{{day}}-{{slug}}",
   fields,

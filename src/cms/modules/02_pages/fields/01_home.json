@@ -1,8 +1,14 @@
 {
-  "file": "content/pages/index.md",
+  "file": "src/pages/index.md",
   "label": "Home",
   "name": "home",
   "fields": [
+    {
+      "label": "Template Key",
+      "name": "templateKey",
+      "widget": "hidden",
+      "default": "pages/home"
+    },
     {
       "label": "Flip Card",
       "name": "flipcards",

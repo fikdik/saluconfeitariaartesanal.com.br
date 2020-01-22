@@ -1,4 +1,5 @@
 ---
+templateKey: pages/simple
 title: Alguns De Nossos Bolos Mais Pedidos.
 galery:
   - label: Bolo de noses

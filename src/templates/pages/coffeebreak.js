@@ -1,8 +1,13 @@
 import React from "react"
 
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
+import PropTypes from "prop-types"
 
-export default function CoffeeBreakPageTemplate({ data }) {
+import SimpleForm from "~/components/SimpleForm"
+import Layout from "~/layouts/Layout"
+
+export const Template = ({ data }) => {
   const { title, texts, cards, html, SForm } = data
   return (
     <main className="flex-auto">
@@ -61,3 +66,47 @@ export default function CoffeeBreakPageTemplate({ data }) {
     </main>
   )
 }
+
+export default function CoffeBreakPage({ data }) {
+  const { frontmatter, html } = data.markdownRemark
+  return (
+    <Layout>
+      <Template data={{ ...frontmatter, html, SForm: SimpleForm }} />
+    </Layout>
+  )
+}
+
+CoffeBreakPage.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.object,
+    }),
+  }),
+}
+
+export const pageQuery = graphql`
+  query CoffeebreakPage($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      frontmatter {
+        title
+        texts {
+          paragraph
+        }
+        cards {
+          label
+          description
+          icon {
+            childImageSharp {
+              fluid(maxWidth: 400, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          linkText
+          linkUrl
+        }
+      }
+      html
+    }
+  }
+`

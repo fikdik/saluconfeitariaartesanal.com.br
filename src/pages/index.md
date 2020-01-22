@@ -1,4 +1,5 @@
 ---
+templateKey: pages/home
 flipcards:
   - back:
       description: >-

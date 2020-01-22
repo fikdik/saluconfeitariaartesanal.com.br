@@ -1,13 +1,14 @@
 {
-  "file": "src/pages/bolos.md",
-  "label": "Bolos",
-  "name": "bolos",
+  "file": "src/pages/especiais.md",
+  "label": "Especiais",
+  "name": "especiais",
   "fields": [
     {
       "label": "Template Key",
       "name": "templateKey",
       "widget": "hidden",
-      "default": "pages/simple"
+      "default": "pages/simple",
+      "required": false
     },
 
     { "label": "Title", "name": "title", "widget": "string" },

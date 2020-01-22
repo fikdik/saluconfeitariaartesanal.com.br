@@ -1,5 +1,5 @@
 ---
-templateKey: BlogPostTemplate
+templateKey: blog/post
 title: 'Just in: small batch of Jamaican Blue Mountain in store next week'
 date: 2017-03-31T16:04:10.000Z
 description: >-

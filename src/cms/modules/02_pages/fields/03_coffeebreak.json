@@ -1,8 +1,15 @@
 {
-  "file": "content/pages/coffee-break.md",
+  "file": "src/pages/coffee-break.md",
   "label": "Coffee Break",
   "name": "coffee-break",
   "fields": [
+    {
+      "label": "Template Key",
+      "name": "templateKey",
+      "widget": "hidden",
+      "default": "pages/coffeebreak"
+    },
+
     { "label": "Title", "name": "title", "widget": "string" },
     {
       "label": "Texts",

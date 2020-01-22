@@ -1,4 +1,5 @@
 ---
+templateKey: pages/links
 links:
   - label: 'Curso, aprenda a fazer o bolo mais fofo do mundo.'
     url: /bolos/
