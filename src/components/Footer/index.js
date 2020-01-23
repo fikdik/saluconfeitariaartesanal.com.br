@@ -72,7 +72,7 @@ function FooterBlogPots({ data }) {
 const BlogPosts = () => (
   <StaticQuery
     query={graphql`
-      query BlogIndex {
+      query FooterBlogIndex {
         allMarkdownRemark(
           limit: 3
           sort: { order: DESC, fields: [frontmatter___date] }

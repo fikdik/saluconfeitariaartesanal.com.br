@@ -1,0 +1,12 @@
+.blog-post-md {
+  & * {
+    @apply mb-2;
+  }
+  & h2,
+  & h3 {
+    @apply font-bold mt-2 pt-1 font-serif;
+  }
+  & h2 {
+    @apply text-2xl;
+  }
+}

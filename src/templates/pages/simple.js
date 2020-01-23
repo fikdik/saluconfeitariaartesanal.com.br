@@ -44,7 +44,7 @@ export const Template = ({ data }) => {
             </div>
           )}
           <div
-            className="simple-page-content md:w-1/2"
+            className="simple-page-md md:w-1/2"
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </div>

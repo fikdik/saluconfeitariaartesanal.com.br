@@ -12,9 +12,9 @@ export const Template = ({ data }) => {
       <div className="bg-brand-1-4 text-brand-3-0 p-6 text-center text-3xl font-serif md:text-4xl">
         <h1>{title}</h1>
       </div>
-      <div className="bg-svg">
+      <div className="container py-8">
         <div
-          className="blog-post-content"
+          className="blog-post-md"
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>
