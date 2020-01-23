@@ -59,7 +59,7 @@ function FooterBlogPots({ data }) {
     <ul>
       {nodes.map(post => (
         <li key={post.id}>
-          <SmartLink>
+          <SmartLink to={post.fields.slug}>
             <span>{post.frontmatter.title}</span>
             <small>{post.frontmatter.date}</small>
           </SmartLink>
