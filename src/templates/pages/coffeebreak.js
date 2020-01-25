@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import PropTypes from "prop-types"
 
+import SEO from "~/components/SEO"
 import SimpleForm from "~/components/SimpleForm"
 import Layout from "~/layouts/Layout"
 
@@ -71,6 +72,7 @@ export default function CoffeBreakPage({ data }) {
   const { frontmatter, html } = data.markdownRemark
   return (
     <Layout>
+      <SEO title={`${frontmatter.title}`} />
       <Template data={{ ...frontmatter, html, SForm: SimpleForm }} />
     </Layout>
   )

@@ -2,6 +2,8 @@ import React, { useState } from "react"
 
 import { navigate } from "gatsby-link"
 
+import styles from "./index.module.css"
+
 function encode(data) {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
@@ -31,7 +33,7 @@ export default function SimpleForm(props) {
   }
   return (
     <form
-      className="simple-form"
+      className={styles.simpleForm}
       name="contact"
       method="post"
       action="/"
@@ -50,7 +52,7 @@ export default function SimpleForm(props) {
           </label>
         </div>
       </div>
-      <div className="input">
+      <div className={styles.input}>
         <input
           type={"text"}
           name={"name"}
@@ -60,7 +62,7 @@ export default function SimpleForm(props) {
           required={true}
         />
       </div>
-      <div className="input">
+      <div className={styles.input}>
         <input
           type={"email"}
           name={"email"}
@@ -70,7 +72,7 @@ export default function SimpleForm(props) {
           required={true}
         />
       </div>
-      <div className="input">
+      <div className={styles.input}>
         <textarea
           name={"message"}
           onChange={handleChange}

@@ -5,6 +5,7 @@ import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 
 import PreviewCompatibleImage from "~/components/PreviewCompatibleImage"
+import SEO from "~/components/SEO"
 import SimpleForm from "~/components/SimpleForm"
 import Layout from "~/layouts/Layout"
 
@@ -57,6 +58,7 @@ export default function SimplePage({ data }) {
   const { frontmatter, html } = data.markdownRemark
   return (
     <Layout>
+      <SEO title={`${frontmatter.title}`} />
       <Template data={{ ...frontmatter, html, SForm: SimpleForm }} />
     </Layout>
   )

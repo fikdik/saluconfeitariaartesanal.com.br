@@ -3,6 +3,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import BlogPostListItem from "~/components/BlogPostListItem"
+import SEO from "~/components/SEO"
 import Layout from "~/layouts/Layout"
 
 export default function BlogIndexPage({ data }) {
@@ -10,6 +11,7 @@ export default function BlogIndexPage({ data }) {
 
   return (
     <Layout>
+      <SEO title="Blog index" />
       <section className="flex-auto">
         <div className="bg-brand-1-4 text-brand-3-0 p-6 text-center text-3xl font-serif md:text-4xl">
           <h1>Blog</h1>

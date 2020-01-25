@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 
 import FlipCard from "~/components/FlipCard"
+import SEO from "~/components/SEO"
 import Layout from "~/layouts/Layout"
 
 export const Template = ({ data }) => {
@@ -27,6 +28,7 @@ export default function HomePage({ data }) {
   const { frontmatter } = data.markdownRemark
   return (
     <Layout>
+      <SEO />
       <Template data={frontmatter} />
     </Layout>
   )

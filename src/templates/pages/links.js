@@ -3,6 +3,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 
+import SEO from "~/components/SEO"
 import SmartLink from "~/components/SmartLink"
 import CleanLayout from "~/layouts/CleanLayout"
 
@@ -30,6 +31,7 @@ export default function EspeciaisPage({ data }) {
   const { frontmatter } = data.markdownRemark
   return (
     <CleanLayout>
+      <SEO title="Links" />
       <Template data={{ ...frontmatter }} />
     </CleanLayout>
   )

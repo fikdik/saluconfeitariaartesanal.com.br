@@ -64,6 +64,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: siteMetadata.siteUrl,
+        stripQueryString: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-nprogress`,
       options: {
         // Setting a color is optional.
@@ -78,7 +85,6 @@ module.exports = {
         fonts: Object.keys(googleFonts).map(k => googleFonts[k]),
       },
     },
-
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

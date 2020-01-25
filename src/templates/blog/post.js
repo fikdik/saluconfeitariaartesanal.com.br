@@ -3,6 +3,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 
+import SEO from "~/components/SEO"
 import Layout from "~/layouts/Layout"
 
 export const Template = ({ data }) => {
@@ -26,6 +27,7 @@ export default function PostBlog({ data }) {
   const { frontmatter, html } = data.markdownRemark
   return (
     <Layout>
+      <SEO title={frontmatter.title} />
       <Template data={{ ...frontmatter, html }} />
     </Layout>
   )

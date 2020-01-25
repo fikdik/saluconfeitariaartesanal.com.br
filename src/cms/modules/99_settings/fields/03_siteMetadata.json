@@ -13,6 +13,12 @@
       "name": "logoAlt",
       "widget": "image",
       "required": false
+    },
+    {
+      "label": "Open Graph Default Image",
+      "name": "ogImage",
+      "widget": "image",
+      "required": false
     }
   ]
 }
