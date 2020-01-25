@@ -1,7 +1,7 @@
-const _ = require("lodash")
 const { fmImagesToRelative } = require("gatsby-remark-relative-images")
-const path = require("path")
 const { createFilePath } = require("gatsby-source-filesystem")
+const _ = require("lodash")
+const path = require("path")
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
