@@ -6,22 +6,23 @@ import { graphql, StaticQuery } from "gatsby"
 import SmartLink from "~/components/SmartLink"
 import SVGIcon from "~/components/SVGIcon"
 
+import styles from "./index.module.css"
 import Signature from "./Signature"
 
 export default function Footer() {
   const [address, phone, email] = contacts
   return (
-    <div className="bg-footer pt-6 text-custom-1-1">
+    <div className={styles.bgFooter}>
       <div className="container flex flex-wrap">
-        <div className="footer-col">
+        <div className={styles.footerCol}>
           <img src="/img/salu-logo-bbg.svg" alt="Salu logo" />
           <span>Tudo feito com amor!</span>
         </div>
-        <div className="footer-col">
+        <div className={styles.footerCol}>
           <header>Ultimas Gostosuras</header>
           <BlogPosts />
         </div>
-        <div className="footer-col">
+        <div className={styles.footerCol}>
           <header className="">Contato</header>
           <dl>
             <SmartLink to={address.url}>

@@ -10,6 +10,8 @@ galery:
     picture: /img/bolo-00004.jpg
   - label: Coco
     picture: /img/bolo-00005.jpg
+  - label: Cuca de banana
+    picture: /img/bolo-00006.jpg
 ---
 Experimente um de nossos deliciosos bolos. Não deixe de pedir o bolo como quiser, faremos o que estiver ao nosso alcance para lhe agradar.
 
