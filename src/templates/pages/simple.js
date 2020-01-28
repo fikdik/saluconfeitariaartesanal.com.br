@@ -1,13 +1,14 @@
 import React from "react"
 
 import { graphql } from "gatsby"
-// import Img from "gatsby-image"
 import PropTypes from "prop-types"
 
 import PreviewCompatibleImage from "~/components/PreviewCompatibleImage"
 import SEO from "~/components/SEO"
 import SimpleForm from "~/components/SimpleForm"
 import Layout from "~/layouts/Layout"
+
+import styles from "./simple.module.css"
 
 export const Template = ({ data }) => {
   const { title, galery, html, SForm } = data
@@ -45,7 +46,7 @@ export const Template = ({ data }) => {
             </div>
           )}
           <div
-            className="simple-page-md md:w-1/2"
+            className={`${styles.simplePageMD} md:w-1/2`}
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </div>

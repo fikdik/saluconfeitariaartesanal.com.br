@@ -8,6 +8,8 @@ import SEO from "~/components/SEO"
 import SimpleForm from "~/components/SimpleForm"
 import Layout from "~/layouts/Layout"
 
+import styles from "./simple.module.css"
+
 export const Template = ({ data }) => {
   const { title, texts, cards, html, SForm } = data
   return (
@@ -59,7 +61,7 @@ export const Template = ({ data }) => {
             </div>
           )}
           <div
-            className="simple-page-md md:w-1/2"
+            className={`${styles.simplePageMD} md:w-1/2`}
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </div>

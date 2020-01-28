@@ -1,7 +1,8 @@
 import React from "react"
 
-import { contacts } from "content/info/contact.json"
+import { email, phone, address } from "content/info/contact.json"
 import { graphql, StaticQuery } from "gatsby"
+import _ from "lodash"
 
 import SmartLink from "~/components/SmartLink"
 import SVGIcon from "~/components/SVGIcon"
@@ -10,7 +11,6 @@ import styles from "./index.module.css"
 import Signature from "./Signature"
 
 export default function Footer() {
-  const [address, phone, email] = contacts
   return (
     <div className={styles.bgFooter}>
       <div className="container flex flex-wrap">
@@ -25,25 +25,27 @@ export default function Footer() {
         <div className={styles.footerCol}>
           <header className="">Contato</header>
           <dl>
-            <SmartLink to={address.url}>
+            <SmartLink to={address.link}>
               <SVGIcon className="md:hidden lg:block" name="map-marker-alt" />
               <div>
-                <dt>{address.label}</dt>
-                <dd>{address.description}</dd>
+                <dt>Endereço</dt>
+                <dd>{address.display}</dd>
               </div>
             </SmartLink>
-            <SmartLink to={phone.url}>
+            <SmartLink
+              to={`https://api.whatsapp.com/send?phone=${phone.number}&text=${phone.message}`}
+            >
               <SVGIcon className="md:hidden lg:block" name="phone" />
               <div>
-                <dt>{phone.label}</dt>
-                <dd>{phone.description}</dd>
+                <dt>Telefone / Whatsapp</dt>
+                <dd>{phone.display}</dd>
               </div>
             </SmartLink>
-            <SmartLink to={email.url}>
+            <SmartLink to={`mailto:${email.address}?subject=${email.subject}`}>
               <SVGIcon className="md:hidden lg:block" name="envelope" />
               <div>
-                <dt>{email.label}</dt>
-                <dd>{email.description}</dd>
+                <dt>Email</dt>
+                <dd>{email.address}</dd>
               </div>
             </SmartLink>
           </dl>
