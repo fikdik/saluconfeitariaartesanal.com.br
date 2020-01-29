@@ -1,8 +1,24 @@
 import React, { useState } from "react"
+import { toast } from "react-toastify"
 
-import { navigate } from "gatsby-link"
+import { Form, Input, Textarea } from "@rocketseat/unform"
+import { phone, email } from "content/info/contact.json"
+import * as Yup from "yup"
+
+// import SmartLink from "~/components/SmartLink"
+import SVGIcon from "~/components/SVGIcon"
 
 import styles from "./index.module.css"
+
+const schema = Yup.object().shape({
+  name: Yup.string().required("O nome é obrigatório"),
+  message: Yup.string().required("Precisa enviar uma mensagem"),
+})
+
+function openInNewTab(url, query = {}) {
+  var win = window.open(url + encode(query), "_blank")
+  win.focus()
+}
 
 function encode(data) {
   return Object.keys(data)
@@ -10,80 +26,70 @@ function encode(data) {
     .join("&")
 }
 
-export default function SimpleForm(props) {
-  const [state, setState] = useState({})
+export default function SimpleForm() {
+  const [way, setWay] = useState("")
 
-  function handleChange(e) {
-    setState({ ...state, [e.target.name]: e.target.value })
+  function handleSubmit(data) {
+    // e.preventDefault()
+    console.log(data)
+    switch (way) {
+      case "whatsapp": {
+        const text = `${phone.message} Sou *${data.name.trim()}*.\n${
+          data.message
+        }`
+        openInNewTab("https://api.whatsapp.com/send?", {
+          phone: phone.number,
+          text,
+        })
+        break
+      }
+      case "email": {
+        const body = `Sou ${data.name.trim()}.\n${data.message}`
+        openInNewTab(`mailto:${email.address}?`, {
+          subject: `contato pela página ${window.location.pathname} `,
+          body,
+        })
+        break
+      }
+      default: {
+        toast.error("Use um dos botoes para enviar")
+      }
+    }
   }
 
-  function handleSubmit(e) {
-    e.preventDefault()
-    const form = e.target
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": form.getAttribute("name"),
-        ...state,
-      }),
-    })
-      .then(() => navigate(form.getAttribute("action")))
-      .catch(error => alert(error))
-  }
   return (
-    <form
-      className={styles.simpleForm}
+    <Form
+      schema={schema}
       name="contact"
       method="post"
       action="/"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
-      netlify
+      className={styles.simpleForm}
     >
-      <div className="hidden">
-        {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-        <input type="hidden" name="form-name" value="contact" />
-        <div hidden>
-          <label>
-            Don’t fill this out:{" "}
-            <input name="bot-field" onChange={handleChange} />
-          </label>
-        </div>
+      <div className={styles.input}>
+        <Input name="name" type="text" placeholder="Escreva seu nome aqui" />
       </div>
       <div className={styles.input}>
-        <input
-          type={"text"}
-          name={"name"}
-          onChange={handleChange}
-          id={"name"}
-          placeholder="Seu nome"
-          required={true}
-        />
+        <Textarea name="message" placeholder="Escreva sua mensagem aqui" />
       </div>
-      <div className={styles.input}>
-        <input
-          type={"email"}
-          name={"email"}
-          onChange={handleChange}
-          id={"email"}
-          placeholder="Seu email"
-          required={true}
-        />
+      <div className="flex w-full text-white">
+        <button
+          className="btn mr-2 flex-auto"
+          type="submit"
+          onClick={() => setWay("whatsapp")}
+        >
+          <SVGIcon className="w-8 h-8 mr-2" name="whatsapp" />
+          Enviar por Whatsapp
+        </button>
+        <button
+          className="btn flex-auto"
+          type="submit"
+          onClick={() => setWay("email")}
+        >
+          <SVGIcon className="w-8 h-8 mr-2" name="envelope" />
+          Enviar por email
+        </button>
       </div>
-      <div className={styles.input}>
-        <textarea
-          name={"message"}
-          onChange={handleChange}
-          id={"message"}
-          placeholder="Sua mensagem"
-          required={true}
-        />
-      </div>
-      <button className="bg-yellow-500 py-3 rounded-lg" type="submit">
-        Enviar
-      </button>
-    </form>
+    </Form>
   )
 }

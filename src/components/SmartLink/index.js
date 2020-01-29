@@ -9,20 +9,27 @@ const SmartLink = React.forwardRef((props, ref) => {
     <>
       {link.startsWith("/") && !link.startsWith("//") ? (
         <Link
-          component={Link}
-          ref={ref}
-          to={link}
-          {...{ activeClassName: "active", ...props }}
+          {...{
+            activeClassName: "active",
+            ...props,
+            component: Link,
+            ref: ref,
+            to: link,
+          }}
         >
           {props.children}
         </Link>
+      ) : link.startsWith("#") ? (
+        <a {...{ ...props, ref, href: link }}>{props.children}</a>
       ) : (
         <a
-          ref={ref}
-          target="_blank"
-          rel="noopener noreferrer"
-          href={link}
-          {...props}
+          {...{
+            ...props,
+            ref,
+            href: link,
+            target: "_blank",
+            rel: "noopener noreferrer",
+          }}
         >
           {props.children}
         </a>

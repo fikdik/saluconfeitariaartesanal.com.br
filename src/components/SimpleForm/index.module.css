@@ -2,7 +2,7 @@
   @apply flex flex-col;
 
   & .input {
-    @apply my-3;
+    @apply my-2 pb-2;
   }
 
   & input,
@@ -17,6 +17,10 @@
   }
 
   & textarea {
-    @apply h-24;
+    @apply h-24 -mb-2;
+  }
+
+  & span {
+    @apply text-white bg-red-500 w-full mb-2 px-4 py-1 -mt-2 rounded-br rounded-bl;
   }
 }

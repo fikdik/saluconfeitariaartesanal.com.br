@@ -6,7 +6,15 @@
     { "label": "Title", "name": "title", "widget": "string" },
     { "label": "Site Url", "name": "siteUrl", "widget": "string" },
     { "label": "Short Slogan", "name": "slogan", "widget": "string" },
-    { "label": "Short Description", "name": "description", "widget": "string" },
+    {
+      "label": "Short Description",
+      "name": "description",
+      "widget": "string",
+      "pattern": [
+        ".{100,160}",
+        "Must have at least 100 characters and not more than 160"
+      ]
+    },
     { "label": "Logo", "name": "logo", "widget": "image" },
     {
       "label": "Logo Alternative",

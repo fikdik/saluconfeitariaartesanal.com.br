@@ -1,8 +1,8 @@
 {
-  "social": [
+  "networks": [
     {
-      "network": "instagram",
-      "url": "https://www.instagram.com/saluconfeitariaartesanal/"
+      "name": "instagram",
+      "link": "https://www.instagram.com/saluconfeitariaartesanal/"
     }
   ]
 }

@@ -6,9 +6,9 @@ const BurgerMenu = props => {
   return (
     <div className={styles.burgerMenu} onClick={props.toggleNavbar}>
       <div className={props.navbarOpen ? styles.open : ""}>
-        <span className="bg-navBar-colorBurguer">&nbsp;</span>
-        <span className="bg-navBar-colorBurguer">&nbsp;</span>
-        <span className="bg-navBar-colorBurguer">&nbsp;</span>
+        <span>&nbsp;</span>
+        <span>&nbsp;</span>
+        <span>&nbsp;</span>
       </div>
     </div>
   )

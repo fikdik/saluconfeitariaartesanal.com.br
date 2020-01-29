@@ -15,7 +15,7 @@ export const Template = ({ data }) => {
       </div>
       <div className="container py-8">
         <div
-          className="blog-post-md"
+          className="blog-post-md responsive-columns text-justify"
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>

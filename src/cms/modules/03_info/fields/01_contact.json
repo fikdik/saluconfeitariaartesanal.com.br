@@ -57,22 +57,6 @@
           "required": false
         }
       ]
-    },
-    {
-      "label": "Contacts",
-      "name": "contacts",
-      "widget": "list",
-      "fields": [
-        { "label": "Label", "name": "label", "widget": "string" },
-        {
-          "label": "Type",
-          "name": "type",
-          "widget": "select",
-          "options": ["address", "phone", "email", "whatsapp"]
-        },
-        { "label": "Description", "name": "description", "widget": "string" },
-        { "label": "Url", "name": "url", "widget": "string" }
-      ]
     }
   ]
 }

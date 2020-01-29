@@ -5,6 +5,7 @@ import { graphql, StaticQuery } from "gatsby"
 import _ from "lodash"
 
 import SmartLink from "~/components/SmartLink"
+import SocialIcons from "~/components/SocialIcons"
 import SVGIcon from "~/components/SVGIcon"
 
 import styles from "./index.module.css"
@@ -17,6 +18,7 @@ export default function Footer() {
         <div className={styles.footerCol}>
           <img src="/img/salu-logo-bbg.svg" alt="Salu logo" />
           <span>Tudo feito com amor!</span>
+          <SocialIcons />
         </div>
         <div className={styles.footerCol}>
           <header>Ultimas Gostosuras</header>

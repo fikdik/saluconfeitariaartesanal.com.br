@@ -4,17 +4,17 @@
   "file": "content/info/social.json",
   "fields": [
     {
-      "label": "Social Url",
-      "name": "social",
+      "label": "Social Networks",
+      "name": "networks",
       "widget": "list",
       "fields": [
         {
-          "label": "Network",
-          "name": "network",
+          "label": "Name",
+          "name": "name",
           "widget": "select",
-          "options": ["facebook", "instagram"]
+          "options": ["facebook", "instagram", "linkedin", "twitter", "youtube"]
         },
-        { "label": "Link", "name": "url", "widget": "string" }
+        { "label": "Link", "name": "link", "widget": "string" }
       ]
     }
   ]
