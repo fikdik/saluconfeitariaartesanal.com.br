@@ -72,19 +72,19 @@ export default function SimpleForm() {
       </div>
       <div className="flex w-full text-white">
         <button
-          className="btn mr-2 flex-auto"
+          className="btn mr-2 flex-auto flex-wrap bg-green-500"
           type="submit"
           onClick={() => setWay("whatsapp")}
         >
-          <SVGIcon className="w-8 h-8 mr-2" name="whatsapp" />
+          <SVGIcon className="w-8 h-8 mr-2 mb-2" name="whatsapp" />
           Enviar por Whatsapp
         </button>
         <button
-          className="btn flex-auto text-left"
+          className="btn flex-auto flex-wrap text-left bg-yellow-700"
           type="submit"
           onClick={() => setWay("email")}
         >
-          <SVGIcon className="w-8 h-8 mr-2" name="envelope" />
+          <SVGIcon className="w-8 h-8 mr-2 mb-2" name="envelope" />
           Enviar por email
         </button>
       </div>
