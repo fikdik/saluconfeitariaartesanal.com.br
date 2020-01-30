@@ -29,7 +29,7 @@ function encode(data) {
 export default function SimpleForm() {
   const [way, setWay] = useState("")
 
-  function handleSubmit(data) {
+  function handleSubmit(data, { resetForm }) {
     switch (way) {
       case "whatsapp": {
         const text = `${phone.message} Sou *${data.name.trim()}*.\n${
@@ -39,6 +39,8 @@ export default function SimpleForm() {
           phone: phone.number,
           text,
         })
+        toast.success("Campos validos, complete o envio pelo Whatsapp")
+        resetForm({ message: "" })
         break
       }
       case "email": {
@@ -47,6 +49,8 @@ export default function SimpleForm() {
           subject: `contato pela página ${window.location.pathname} `,
           body,
         })
+        toast.success("Campos validos, complete o envio pelo seu app de email")
+        resetForm({ message: "" })
         break
       }
       default: {
@@ -80,7 +84,7 @@ export default function SimpleForm() {
           Enviar por Whatsapp
         </button>
         <button
-          className="btn flex-auto flex-wrap text-left bg-yellow-700"
+          className="btn flex-auto flex-wrap bg-yellow-700"
           type="submit"
           onClick={() => setWay("email")}
         >
