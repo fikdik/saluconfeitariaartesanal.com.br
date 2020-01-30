@@ -18,7 +18,12 @@ export default function Footer() {
         <div className={`${styles.footerCol} ${styles.logoCol} `}>
           <img src="/img/salu-logo-bbg.svg" alt="Salu logo" />
           <span>Tudo feito com amor!</span>
-          <SocialIcons addBefore={[{ name: "link", link: "/links" }]} />
+          <div className="flex items-center">
+            <SmartLink className="w-10 h-10 p-1 rounded-lg mr-2" to="/links">
+              <SVGIcon className="w-10 h-10" name="link" />
+            </SmartLink>
+            <SocialIcons />
+          </div>
         </div>
         <div className={`${styles.footerCol} ${styles.newsCol} `}>
           <header>Ultimas Gostosuras</header>

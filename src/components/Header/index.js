@@ -23,7 +23,7 @@ export default function Header() {
                 <span>{phone.display}</span>
               </SmartLink>
             </div>
-            <div>
+            <div className="flex items-center">
               <SocialIcons />
             </div>
           </div>

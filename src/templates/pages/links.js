@@ -24,7 +24,7 @@ export const Template = ({ links }) => {
           </SmartLink>
         ))}
       </div>
-      <div className="mx-auto max-w-3xl text-white">
+      <div className="flex items-center mx-auto max-w-3xl text-white">
         <SocialIcons />
       </div>
     </main>
