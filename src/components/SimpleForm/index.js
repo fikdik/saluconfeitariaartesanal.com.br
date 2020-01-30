@@ -30,8 +30,6 @@ export default function SimpleForm() {
   const [way, setWay] = useState("")
 
   function handleSubmit(data) {
-    // e.preventDefault()
-    console.log(data)
     switch (way) {
       case "whatsapp": {
         const text = `${phone.message} Sou *${data.name.trim()}*.\n${
@@ -82,7 +80,7 @@ export default function SimpleForm() {
           Enviar por Whatsapp
         </button>
         <button
-          className="btn flex-auto"
+          className="btn flex-auto text-left"
           type="submit"
           onClick={() => setWay("email")}
         >

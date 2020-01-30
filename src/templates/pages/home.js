@@ -7,13 +7,12 @@ import FlipCard from "~/components/FlipCard"
 import SEO from "~/components/SEO"
 import Layout from "~/layouts/Layout"
 
-export const Template = ({ data }) => {
-  const { flipcards } = data
+export const Template = ({ flipcards }) => {
   return (
     <main className="flex-auto">
       <div className="py-6 container flex flex-wrap">
         {flipcards.map(flipcard => (
-          <FlipCard data={flipcard} key={data?.front?.title} />
+          <FlipCard data={flipcard} key={flipcard.front.title} />
         ))}
       </div>
     </main>
@@ -29,7 +28,7 @@ export default function HomePage({ data }) {
   return (
     <Layout>
       <SEO />
-      <Template data={frontmatter} />
+      <Template flipcards={frontmatter.flipcards} />
     </Layout>
   )
 }

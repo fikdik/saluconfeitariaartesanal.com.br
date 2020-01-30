@@ -1,15 +1,16 @@
 import React from "react"
 
-import CMS from "netlify-cms-app"
 import PropTypes from "prop-types"
 
-import { Template } from "~/templates/blog/post"
+import { Template } from "~/templates/pages/links"
 
-function Preview({ entry, widgetFor }) {
+function Preview({ entry }) {
   const data = entry.getIn(["data"]).toJS()
 
+  console.log(data)
+
   if (data) {
-    return <Template title={data.title} content={widgetFor("body")} />
+    return <Template links={data.links} />
   } else {
     return <div>Loading ...</div>
   }
@@ -22,6 +23,4 @@ Preview.propTypes = {
   widgetFor: PropTypes.func,
 }
 
-export default function registerPreview() {
-  CMS.registerPreviewTemplate("blog", Preview)
-}
+export default Preview

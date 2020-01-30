@@ -9,7 +9,7 @@ import styles from "./index.module.css"
 
 export default function SocialIcons() {
   return (
-    <ul className="flex">
+    <ul className="flex items-center">
       {networks.map((network, index) => (
         <li key={`${network.name} - ${index}`}>
           <SmartLink to={network.link}>

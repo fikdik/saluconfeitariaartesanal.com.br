@@ -1,8 +1,8 @@
 import React from "react"
 
-import Img from "gatsby-image"
 import _ from "lodash"
 
+import PreviewCompatibleImage from "../PreviewCompatibleImage"
 import SmartLink from "../SmartLink"
 
 export default function BlogPostListItem({ post }) {
@@ -16,10 +16,12 @@ export default function BlogPostListItem({ post }) {
         <div className="flex flex-col items-start lg:flex-row">
           {post.frontmatter.featuredimage && (
             <div className="h-40 w-full mr-4 mb-4 rounded-lg overflow-hidden flex items-center lg:w-1/3">
-              <Img
+              <PreviewCompatibleImage
                 className="h-40 w-full"
-                fluid={post.frontmatter.featuredimage.childImageSharp.fluid}
-                alt={`image for post title ${post.title}`}
+                imageInfo={{
+                  image: post.frontmatter.featuredimage,
+                  alt: `image for post title ${post.title}`,
+                }}
               />
             </div>
           )}

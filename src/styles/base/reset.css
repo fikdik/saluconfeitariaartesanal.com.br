@@ -5,6 +5,7 @@ html {
 
 textarea {
   resize: none;
+  font-size: 1rem;
 }
 
 #___gatsby {

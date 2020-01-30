@@ -1,17 +1,25 @@
 import React from "react"
 
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
 import PropTypes from "prop-types"
 
+import Content, { HTMLContent } from "~/components/Content"
+import PreviewCompatibleImage from "~/components/PreviewCompatibleImage"
 import SEO from "~/components/SEO"
 import SimpleForm from "~/components/SimpleForm"
 import Layout from "~/layouts/Layout"
 
 import styles from "./simple.module.css"
 
-export const Template = ({ data }) => {
-  const { title, texts, cards, html, SForm } = data
+export const Template = ({
+  title,
+  texts,
+  cards,
+  content,
+  contentComponent,
+  SForm,
+}) => {
+  const MDComponent = contentComponent || Content
   return (
     <main className="flex-auto">
       <div className="bg-brand-1-4 text-brand-3-0 p-6 text-center text-3xl font-serif md:text-4xl">
@@ -32,11 +40,10 @@ export const Template = ({ data }) => {
                   key={card.title}
                 >
                   <div className="block">
-                    <Img
+                    <PreviewCompatibleImage
                       className="w-32 h-auto"
-                      fluid={card.icon.childImageSharp.fluid}
-                      alt={card.title}
-                    ></Img>
+                      imageInfo={{ image: card.icon, alt: card.title }}
+                    />
                   </div>
 
                   <h2 className="my-6 text-2xl font-bold">{card.label}</h2>
@@ -53,16 +60,18 @@ export const Template = ({ data }) => {
           </div>
         </div>
         <div className="container flex flex-wrap-reverse items-center">
-          {SForm && (
+          {!!SForm && (
             <div className="p-4  flex-auto md:px-10">
               <div id="solicite"></div>
-              <div className="text-3xl font-bold">Encomende</div>
-              <SForm></SForm>
+              <div className="text-3xl font-bold md:text-brand-3-3">
+                Encomende
+              </div>
+              <SForm />
             </div>
           )}
-          <div
+          <MDComponent
             className={`${styles.simplePageMD} md:w-1/2`}
-            dangerouslySetInnerHTML={{ __html: html }}
+            content={content}
           />
         </div>
       </div>
@@ -75,7 +84,14 @@ export default function CoffeBreakPage({ data }) {
   return (
     <Layout>
       <SEO title={`${frontmatter.title}`} />
-      <Template data={{ ...frontmatter, html, SForm: SimpleForm }} />
+      <Template
+        title={frontmatter.title}
+        texts={frontmatter.texts}
+        cards={frontmatter.cards}
+        content={html}
+        contentComponent={HTMLContent}
+        SForm={SimpleForm}
+      />
     </Layout>
   )
 }

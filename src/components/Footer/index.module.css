@@ -15,10 +15,6 @@
     max-width: 33%;
   }
 
-  & > img {
-    @apply w-1/3 mb-1;
-  }
-
   & > span {
     @apply mb-1;
   }
@@ -39,12 +35,28 @@
       @apply text-custom-1-2;
     }
   }
+}
+
+.logoCol {
+  & > img {
+    @apply w-1/3 mb-1;
+  }
+}
+
+.newsCol {
   & a + a,
   & li + li {
     @apply mt-2 pt-2;
     border-top: 1px dashed theme("colors.brand-3.3");
   }
+}
 
+.contactCol {
+  & a + a,
+  & li + li {
+    @apply mt-2 pt-2;
+    border-top: 1px dashed theme("colors.brand-3.3");
+  }
   & dl {
     @apply flex flex-col flex-auto items-start justify-center;
 

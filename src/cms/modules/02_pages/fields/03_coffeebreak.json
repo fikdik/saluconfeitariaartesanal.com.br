@@ -1,7 +1,7 @@
 {
   "file": "src/pages/coffee-break.md",
   "label": "Coffee Break",
-  "name": "coffee-break",
+  "name": "coffeeBreak",
   "fields": [
     {
       "label": "Template Key",

@@ -15,16 +15,16 @@ export default function Footer() {
   return (
     <div className={styles.bgFooter}>
       <div className="container flex flex-wrap">
-        <div className={styles.footerCol}>
+        <div className={`${styles.footerCol} ${styles.logoCol} `}>
           <img src="/img/salu-logo-bbg.svg" alt="Salu logo" />
           <span>Tudo feito com amor!</span>
-          <SocialIcons />
+          <SocialIcons addBefore={[{ name: "link", link: "/links" }]} />
         </div>
-        <div className={styles.footerCol}>
+        <div className={`${styles.footerCol} ${styles.newsCol} `}>
           <header>Ultimas Gostosuras</header>
           <BlogPosts />
         </div>
-        <div className={styles.footerCol}>
+        <div className={`${styles.footerCol} ${styles.contactCol} `}>
           <header className="">Contato</header>
           <dl>
             <SmartLink to={address.link}>

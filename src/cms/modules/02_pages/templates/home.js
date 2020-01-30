@@ -8,7 +8,7 @@ function Preview({ entry }) {
   const data = entry.getIn(["data"]).toJS()
 
   if (data) {
-    return <Template data={data} />
+    return <Template flipcards={data.flipcards} />
   } else {
     return <div>Loading ...</div>
   }

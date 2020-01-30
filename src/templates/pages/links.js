@@ -10,8 +10,7 @@ import CleanLayout from "~/layouts/CleanLayout"
 
 import styles from "./links.module.css"
 
-export const Template = ({ data }) => {
-  const { links } = data
+export const Template = ({ links }) => {
   return (
     <main className="flex-auto flex flex-col">
       <div className="p-4 mx-auto max-w-4xl flex flex-col items-center">
@@ -37,7 +36,7 @@ export default function EspeciaisPage({ data }) {
   return (
     <CleanLayout>
       <SEO title="Links" />
-      <Template data={{ ...frontmatter }} />
+      <Template links={frontmatter.links} />
     </CleanLayout>
   )
 }
