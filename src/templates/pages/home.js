@@ -1,5 +1,6 @@
 import React from "react"
 
+import siteMetadata from "content/settings/siteMetadata.json"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 
@@ -27,7 +28,17 @@ export default function HomePage({ data }) {
   const { frontmatter } = data.markdownRemark
   return (
     <Layout>
-      <SEO />
+      <SEO
+        titleTemplate={`%s : ${siteMetadata.slogan}`}
+        meta={[
+          {
+            name: "geo.position",
+            content: `${siteMetadata.geo.position.latitude}; ${siteMetadata.geo.position.longitude}`,
+          },
+          { name: "geo.placename", content: siteMetadata.geo.placename },
+          { name: "geo.region", content: siteMetadata.geo.region },
+        ]}
+      />
       <Template flipcards={frontmatter.flipcards} />
     </Layout>
   )

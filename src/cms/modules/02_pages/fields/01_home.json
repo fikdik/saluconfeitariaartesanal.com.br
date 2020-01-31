@@ -16,14 +16,14 @@
       "fields": [
         { "label": "Label", "name": "label", "widget": "string" },
         {
+          "label": "Front",
           "name": "front",
           "widget": "object",
-          "label": "Front",
           "fields": [
             {
+              "label": "Icon",
               "name": "icon",
               "widget": "select",
-              "label": "Icon",
               "options": [
                 { "label": "Smile", "value": "smile" },
                 { "label": "Gift", "value": "gift" },
@@ -34,9 +34,9 @@
           ]
         },
         {
+          "label": "Back",
           "name": "back",
           "widget": "object",
-          "label": "Back",
           "fields": [
             { "label": "Title", "name": "title", "widget": "string" },
             { "label": "Text", "name": "description", "widget": "string" },
@@ -47,6 +47,50 @@
               "widget": "string",
               "required": false
             }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "SEO Metadata",
+      "name": "seo",
+      "widget": "object",
+      "required": false,
+      "fields": [
+        {
+          "label": "Highlight Image",
+          "name": "image",
+          "widget": "image",
+          "required": false
+        },
+        {
+          "label": "Description",
+          "name": "description",
+          "widget": "string",
+          "required": false,
+          "pattern": [
+            ".{30,155}",
+            "Must have at least 30 characters and not more than 155"
+          ]
+        },
+        {
+          "label": "Extra Name Fields",
+          "name": "names",
+          "widget": "list",
+          "required": false,
+          "fields": [
+            { "label": "Name", "name": "name", "widget": "string" },
+            { "label": "Content", "name": "content", "widget": "string" }
+          ]
+        },
+        {
+          "label": "Extra Property Fields",
+          "name": "properties",
+          "widget": "list",
+          "required": false,
+          "fields": [
+            { "label": "Property", "name": "property", "widget": "string" },
+            { "label": "Content", "name": "content", "widget": "string" }
           ]
         }
       ]

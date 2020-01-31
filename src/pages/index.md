@@ -6,7 +6,7 @@ flipcards:
         Adoramos experimentar, veja alguns dos bolos que ja fizemos e solicite
         um sabor.
       link: /bolos/
-      linkText: ""
+      linkText: ''
       title: Bolos e Doces
     front:
       icon: smile
@@ -30,4 +30,14 @@ flipcards:
       icon: gift
       img: /img/especial-00001.jpg
     label: Presentes Especiais
+seo:
+  description: Conheça mais sobre a Salu Confeitaria Artesanal. Entre em contato
+  image: /img/salu-logo.svg
+  names:
+    - content: testando
+      name: 'name:teste'
+  properties:
+    - content: teste de propriedade
+      property: property teste
 ---
+

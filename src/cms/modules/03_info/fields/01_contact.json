@@ -29,28 +29,6 @@
       "fields": [
         { "label": "Display Address", "name": "display", "widget": "string" },
         {
-          "label": "Place Name",
-          "name": "placename",
-          "widget": "string",
-          "required": false
-        },
-        {
-          "label": "Region",
-          "name": "region",
-          "widget": "string",
-          "required": false
-        },
-        {
-          "label": "Position",
-          "name": "position",
-          "widget": "object",
-          "required": false,
-          "fields": [
-            { "label": "Latitude", "name": "latitude", "widget": "string" },
-            { "label": "Longitude", "name": "longitude", "widget": "string" }
-          ]
-        },
-        {
           "label": "Link",
           "name": "link",
           "widget": "string",

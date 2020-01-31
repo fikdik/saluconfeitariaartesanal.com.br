@@ -25,6 +25,50 @@
         { "label": "Picture", "name": "picture", "widget": "image" }
       ]
     },
-    { "label": "Body", "name": "body", "widget": "markdown" }
+    { "label": "Body", "name": "body", "widget": "markdown" },
+    {
+      "label": "SEO Metadata",
+      "name": "seo",
+      "widget": "object",
+      "required": false,
+      "fields": [
+        {
+          "label": "Highlight Image",
+          "name": "image",
+          "widget": "image",
+          "required": false
+        },
+        {
+          "label": "Description",
+          "name": "description",
+          "widget": "string",
+          "required": false,
+          "pattern": [
+            ".{30,155}",
+            "Must have at least 30 characters and not more than 155"
+          ]
+        },
+        {
+          "label": "Extra Name Fields",
+          "name": "ogmeta",
+          "widget": "list",
+          "required": false,
+          "fields": [
+            { "label": "Name", "name": "name", "widget": "string" },
+            { "label": "Content", "name": "content", "widget": "string" }
+          ]
+        },
+        {
+          "label": "Extra Porpety Fields",
+          "name": "ogmeta",
+          "widget": "list",
+          "required": false,
+          "fields": [
+            { "label": "Porpety", "name": "porpety", "widget": "string" },
+            { "label": "Content", "name": "content", "widget": "string" }
+          ]
+        }
+      ]
+    }
   ]
 }

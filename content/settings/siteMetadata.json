@@ -1,8 +1,16 @@
 {
   "title": "Salu",
-  "siteUrl": "http://saluconfeitariaartesanal.com.br",
+  "siteUrl": "https://saluconfeitariaartesanal.com.br",
   "slogan": "feito com amor!",
-  "description": "Coffeebreak completo com alta qualidade. Fazemos bolos, doces e salgados.",
+  "description": "Coffeebreak completo com alta qualidade. Fazemos bolos, doces e salgados. Adoramos experimentar.",
   "logo": "/img/salu-logo.svg",
-  "logoAlt": "/img/salu-logo-bbg.svg"
+  "logoAlt": "/img/salu-logo-bbg.svg",
+  "geo": {
+    "placename": "Salu Confeitaria Artesanal",
+    "region": "Espirito Santo",
+    "position": {
+      "latitude": "-40.2726554",
+      "longitude": "-20.2503748"
+    }
+  }
 }
