@@ -1,6 +1,6 @@
 import React from "react"
 
-import { networks } from "content/info/social.json"
+import { networks } from "content/general/social.json"
 
 import SmartLink from "~/components/SmartLink"
 import SVGIcon from "~/components/SVGIcon"

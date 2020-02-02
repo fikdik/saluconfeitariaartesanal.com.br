@@ -3,11 +3,6 @@ html {
   @apply font-sans text-black;
 }
 
-textarea {
-  resize: none;
-  font-size: 1rem;
-}
-
 #___gatsby {
   overflow: hidden;
 }

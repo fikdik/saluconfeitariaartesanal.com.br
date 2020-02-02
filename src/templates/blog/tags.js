@@ -15,18 +15,26 @@ class TagRoute extends React.Component {
     const tagHeader = `${totalCount} post${
       totalCount === 1 ? "" : "s"
     } tagged with “${tag}”`
-
     return (
       <Layout>
-        <SEO title={`${tagHeader}`} />
+        <SEO title={tagHeader} />
         <section className="flex-auto">
           <div className="bg-brand-1-4 text-brand-3-0 p-6 text-center text-3xl font-serif md:text-4xl">
             <h1>{tagHeader}</h1>
           </div>
           <div className="container py-10">
             <div className="flex flex-wrap -m-2">
-              {posts.map(post => (
-                <BlogPostListItem post={post.node} key={post.node.id} />
+              {posts.map(({ node: post }) => (
+                <BlogPostListItem
+                  path={post.fields.slug}
+                  title={post.frontmatter.title}
+                  description={post.frontmatter.description}
+                  date={post.frontmatter.metadata.datePublished}
+                  highlight={!!post.frontmatter.highlight}
+                  cover={post.frontmatter.cover}
+                  tags={post.frontmatter.tags}
+                  key={post.id}
+                />
               ))}
             </div>
             <div className="mt-10">
@@ -50,7 +58,7 @@ export const tagPageQuery = graphql`
     }
     allMarkdownRemark(
       limit: 1000
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___metadata___datePublished], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       totalCount
@@ -62,15 +70,17 @@ export const tagPageQuery = graphql`
           }
           frontmatter {
             title
-            featuredpost
-            featuredimage {
+            highlight
+            cover {
               childImageSharp {
                 fluid(maxWidth: 600, quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }
             }
-            date(formatString: "MMMM DD, YYYY")
+            metadata {
+              datePublished(formatString: "MMMM DD, YYYY")
+            }
             description
             tags
           }

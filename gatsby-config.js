@@ -89,12 +89,36 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it
-        trackingId:
-          process.env.NODE_ENV === "production" ? analytics.trackingId : "",
+        trackingId: analytics.trackingId,
         // Setting this parameter is optional
         anonymize: false,
         // Delays sending pageview hits on route update (in milliseconds)
         pageTransitionDelay: 0,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-amp`,
+      options: {
+        analytics: {
+          type: "gtag",
+          dataCredentials: "include",
+          config: {
+            vars: {
+              gtag_id: analytics.trackingId,
+              config: {
+                [analytics.trackingId]: {
+                  page_location: "{{pathname}}",
+                },
+              },
+            },
+          },
+        },
+        canonicalBaseUrl: siteMetadata.siteUrl,
+        components: ["amp-form"],
+        excludedPaths: ["/404*", "/"],
+        pathIdentifier: "/amp/",
+        relAmpHtmlPattern: "{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}",
+        useAmpClientIdApi: true,
       },
     },
 

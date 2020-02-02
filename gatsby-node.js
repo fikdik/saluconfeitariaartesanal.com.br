@@ -1,3 +1,4 @@
+const fs = require("fs")
 const { fmImagesToRelative } = require("gatsby-remark-relative-images")
 const { createFilePath } = require("gatsby-source-filesystem")
 const _ = require("lodash")
@@ -33,17 +34,30 @@ exports.createPages = ({ actions, graphql }) => {
 
     posts.forEach(edge => {
       const id = edge.node.id
+      const templateName = String(edge.node.frontmatter.templateKey)
       createPage({
         path: edge.node.fields.slug,
         tags: edge.node.frontmatter.tags,
-        component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
-        ),
+        component: path.resolve(`src/templates/${templateName}.js`),
         // additional data can be passed via context
         context: {
           id,
         },
       })
+      try {
+        if (fs.existsSync(`src/templates/${templateName}.amp.js`)) {
+          createPage({
+            path: edge.node.fields.slug + "amp/",
+            tags: edge.node.frontmatter.tags,
+            component: path.resolve(`src/templates/${templateName}.amp.js`),
+            context: {
+              id,
+            },
+          })
+        }
+      } catch (err) {
+        console.error(err)
+      }
     })
 
     // Tag pages:

@@ -1,16 +1,18 @@
 ---
 templateKey: blog/post
-title: Doce de colher
-date: 2017-01-04T15:04:10.000Z
+author: Augusto Cesar Brandão
+title: Doces epeciais
 description: >-
   Brewing with a Chemex probably seems like a complicated, time-consuming
   ordeal, but once you get used to the process, it becomes a soothing ritual
   that's worth the effort every time.
-featuredpost: false
-featuredimage: /img/especial-00003.jpg
+highlight: true
 tags:
   - brewing
   - chemex
+metadata:
+  dateModified: 2020-02-02T02:39:51.559Z
+  datePublished: 2020-02-02T02:39:51.505Z
 ---
 ![chemex](/img/especial-00003.jpg)
 

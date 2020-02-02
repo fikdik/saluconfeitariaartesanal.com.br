@@ -67,12 +67,16 @@ export const Template = ({
 
 export default function SimplePage({ data }) {
   const { frontmatter, html } = data.markdownRemark
+  const { title, galery, metadata } = frontmatter
+  const ogImage = metadata.cover
+    ? metadata.cover.childImageSharp.fluid.src
+    : null
   return (
     <Layout>
-      <SEO title={`${frontmatter.title}`} />
+      <SEO title={title} description={metadata.description} image={ogImage} />
       <Template
-        title={frontmatter.title}
-        galery={frontmatter.galery}
+        title={title}
+        galery={galery}
         content={html}
         contentComponet={HTMLContent}
         SForm={SimpleForm}
@@ -104,6 +108,17 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+        metadata {
+          dateModified
+          cover {
+            childImageSharp {
+              fluid(maxWidth: 1200, quality: 95) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          description
         }
       }
     }

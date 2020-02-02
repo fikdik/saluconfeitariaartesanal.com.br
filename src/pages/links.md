@@ -7,5 +7,7 @@ links:
     url: //instagram.com/saluconfeitariaartesanal
   - label: Siga também no facebook
     url: 'https://facebook.com/saluconfeitariaartesanal'
+metadata:
+  dateModified: 2020-02-02T02:47:38.324Z
 ---
 

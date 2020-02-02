@@ -9,7 +9,7 @@ import Content, { HTMLContent } from "~/components/Content"
 import SEO from "~/components/SEO"
 import Layout from "~/layouts/Layout"
 
-export const Template = ({ title, content, componentContent }) => {
+export const TemplateAMP = ({ title, content, componentContent }) => {
   const PostContent = componentContent || Content
 
   return (
@@ -27,7 +27,7 @@ export const Template = ({ title, content, componentContent }) => {
   )
 }
 
-export default function PostBlog({ data }) {
+export default function PostBlogAMP({ data }) {
   const { frontmatter, html, excerpt, fields } = data.markdownRemark
   const { slug } = fields
   const { author, title, description, metadata } = frontmatter
@@ -66,6 +66,7 @@ export default function PostBlog({ data }) {
   return (
     <Layout>
       <SEO
+        amp={true}
         title={title}
         type="article"
         description={metadata.description}
@@ -73,12 +74,16 @@ export default function PostBlog({ data }) {
         structuredData={structuredDataArticle}
       />
 
-      <Template title={title} content={html} componentContent={HTMLContent} />
+      <TemplateAMP
+        title={title}
+        content={html}
+        componentContent={HTMLContent}
+      />
     </Layout>
   )
 }
 
-PostBlog.propTypes = {
+PostBlogAMP.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -87,7 +92,7 @@ PostBlog.propTypes = {
 }
 
 export const pageQuery = graphql`
-  query PostBlog($id: String!) {
+  query PostBlogAMP($id: String!) {
     markdownRemark(id: { eq: $id }) {
       excerpt
       html

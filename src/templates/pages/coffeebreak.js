@@ -34,11 +34,11 @@ export const Template = ({
           </div>
           <div className="flex flex-wrap mb-20">
             {cards.map(card => (
-              <div className="py-2 flex flex-auto text-brand-4-6 md:w-1/2 md:p-2">
-                <div
-                  className="p-8 bg-gray-100 border-gray-300 border-2 rounded flex-auto flex flex-col items-center justify-around hover:border-brand-3-3"
-                  key={card.title}
-                >
+              <div
+                className="py-2 flex flex-auto text-brand-4-6 md:w-1/2 md:p-2"
+                key={card.title}
+              >
+                <div className="p-8 bg-gray-100 border-gray-300 border-2 rounded flex-auto flex flex-col items-center justify-around hover:border-brand-3-3">
                   <div className="block">
                     <PreviewCompatibleImage
                       className="w-32 h-auto"
@@ -81,13 +81,18 @@ export const Template = ({
 
 export default function CoffeBreakPage({ data }) {
   const { frontmatter, html } = data.markdownRemark
+  const { title, texts, cards, metadata } = frontmatter
+  const ogImage = metadata.cover
+    ? metadata.cover.childImageSharp.fluid.src
+    : null
+
   return (
     <Layout>
-      <SEO title={`${frontmatter.title}`} />
+      <SEO title={title} description={metadata.description} image={ogImage} />
       <Template
-        title={frontmatter.title}
-        texts={frontmatter.texts}
-        cards={frontmatter.cards}
+        title={title}
+        texts={texts}
+        cards={cards}
         content={html}
         contentComponent={HTMLContent}
         SForm={SimpleForm}
@@ -124,6 +129,17 @@ export const pageQuery = graphql`
           }
           linkText
           linkUrl
+        }
+        metadata {
+          dateModified
+          cover {
+            childImageSharp {
+              fluid(maxWidth: 1200, quality: 95) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          description
         }
       }
       html

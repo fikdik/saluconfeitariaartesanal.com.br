@@ -8,6 +8,8 @@ galery:
     picture: /img/especial-00002.jpg
   - label: Mesclado
     picture: /img/especial-00003.jpg
+metadata:
+  dateModified: 2020-02-02T02:47:34.059Z
 ---
 ## Doces Gourmet
 

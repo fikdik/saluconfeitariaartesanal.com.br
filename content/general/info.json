@@ -10,12 +10,18 @@
   },
   "address": {
     "display": "Av. Dr Herman Mondenese Wanderlay, 655, 1 - Jardim Camburi",
-    "placename": "Salu Confeitaria Artesanal",
+    "locality": "Vitória",
     "region": "ES",
-    "position": {
-      "latitude": "-40.2726554,",
-      "longitude": "-20.2503748"
-    },
+    "country": "Brazil",
+    "postalCode": "0000",
     "link": "https://www.google.com/maps/place/Sal%C3%BA+Confeitaria+Artesanal/@-20.2503748,-40.2726554,17z/data=!3m1!4b1!4m5!3m4!1s0xb819a814e6cb6b:0x86e4aa1c4e2ceb81!8m2!3d-20.2503748!4d-40.2704667"
+  },
+  "localID": {
+    "type": "CNPJ",
+    "legalName": "Salu Confeitaria Artesanal",
+    "foundingDate": "2020-02-02T12:18:19.758Z",
+    "display": "000",
+    "number": "000",
+    "founders": ["Augusto Cesar Brandão"]
   }
 }

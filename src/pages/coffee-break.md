@@ -39,6 +39,8 @@ cards:
     label: Brunch / Breakfast
     linkText: Solicite
     linkUrl: '#solicite'
+metadata:
+  dateModified: 2020-02-02T02:47:29.592Z
 ---
 Montagem de mesa, entrega em domicílio, ornamentação, serviço de mesa, organização de eventos. Todos os produtos são artesanais, feitos com cuidado, carinho, saborosos e com muita qualidade.
 

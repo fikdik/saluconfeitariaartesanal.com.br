@@ -19,7 +19,16 @@ export default function BlogIndexPage({ data }) {
         <div className="container py-10">
           <div className="flex flex-wrap -m-2">
             {nodes.map(post => (
-              <BlogPostListItem post={post} key={post.id} />
+              <BlogPostListItem
+                path={post.fields.slug}
+                title={post.frontmatter.title}
+                description={post.frontmatter.description}
+                date={post.frontmatter.metadata.datePublished}
+                highlight={!!post.frontmatter.highlight}
+                cover={post.frontmatter.cover}
+                tags={post.frontmatter.tags}
+                key={post.id}
+              />
             ))}
           </div>
         </div>
@@ -32,23 +41,25 @@ export const pageQuery = graphql`
   query BlogIndex {
     allMarkdownRemark(
       limit: 100
-      sort: { order: DESC, fields: [frontmatter___date] }
+      sort: { order: DESC, fields: [frontmatter___metadata___datePublished] }
       filter: { frontmatter: { templateKey: { eq: "blog/post" } } }
     ) {
       nodes {
         id
         frontmatter {
-          featuredpost
-          featuredimage {
+          title
+          description
+          metadata {
+            datePublished(formatString: "MMMM DD, YYYY")
+          }
+          highlight
+          cover {
             childImageSharp {
-              fluid(maxWidth: 600, quality: 100) {
+              fluid(maxWidth: 600, quality: 95) {
                 ...GatsbyImageSharpFluid
               }
             }
           }
-          title
-          date(formatString: "MMMM DD, YYYY")
-          description
           tags
         }
         fields {

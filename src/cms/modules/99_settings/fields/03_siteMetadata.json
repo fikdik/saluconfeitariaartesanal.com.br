@@ -7,7 +7,7 @@
     { "label": "Site Url", "name": "siteUrl", "widget": "string" },
     { "label": "Short Slogan", "name": "slogan", "widget": "string" },
     {
-      "label": "Short Description",
+      "label": "Default Description",
       "name": "description",
       "widget": "string",
       "pattern": [
@@ -15,6 +15,7 @@
         "Must have at least 80 characters and not more than 155"
       ]
     },
+    { "label": "Main Language", "name": "lang", "widget": "string" },
     { "label": "Logo", "name": "logo", "widget": "image" },
     {
       "label": "Logo Alternative",
@@ -23,40 +24,28 @@
       "required": false
     },
     {
-      "label": "Open Graph Default Image",
-      "name": "ogImage",
+      "label": "Default Image on Share",
+      "name": "thumbnail",
       "widget": "image",
       "required": false
     },
     {
-      "label": "Geo Location",
-      "name": "geo",
-      "widget": "object",
-      "required": false,
-      "fields": [
-        {
-          "label": "Place Name",
-          "name": "placename",
-          "widget": "string",
-          "required": false
-        },
-        {
-          "label": "Region",
-          "name": "region",
-          "widget": "string",
-          "required": false
-        },
-        {
-          "label": "Position",
-          "name": "position",
-          "widget": "object",
-          "required": false,
-          "fields": [
-            { "label": "Latitude", "name": "latitude", "widget": "string" },
-            { "label": "Longitude", "name": "longitude", "widget": "string" }
-          ]
-        }
-      ]
+      "label": "Default Publisher",
+      "name": "publisher",
+      "widget": "string",
+      "required": false
+    },
+    {
+      "label": "Default Author",
+      "name": "author",
+      "widget": "string",
+      "required": false
+    },
+    {
+      "label": "Facebook Admins ID",
+      "name": "fbAdmins",
+      "widget": "string",
+      "required": false
     }
   ]
 }

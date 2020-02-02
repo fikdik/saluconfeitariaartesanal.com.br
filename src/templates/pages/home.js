@@ -1,5 +1,7 @@
 import React from "react"
 
+import info from "content/general/info.json"
+import social from "content/general/social.json"
 import siteMetadata from "content/settings/siteMetadata.json"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
@@ -12,8 +14,8 @@ export const Template = ({ flipcards }) => {
   return (
     <main className="flex-auto">
       <div className="py-6 container flex flex-wrap">
-        {flipcards.map(flipcard => (
-          <FlipCard data={flipcard} key={flipcard.front.title} />
+        {flipcards.map((flipcard, index) => (
+          <FlipCard data={flipcard} key={index} />
         ))}
       </div>
     </main>
@@ -26,20 +28,51 @@ Template.propTypes = {
 
 export default function HomePage({ data }) {
   const { frontmatter } = data.markdownRemark
+  const { flipcards, metadata } = frontmatter
+  const ogImage = metadata.cover
+    ? metadata.cover.childImageSharp.fluid.src
+    : null
+
+  const structuredDataOrganization = JSON.stringify({
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    legalName: info.localID.legalName,
+    url: siteMetadata.siteUrl,
+    logo: siteMetadata.logo,
+    foundingDate: info.localID.foundingDate,
+    founders: info.localID.founders
+      ? info.localID.founders.map(fouder => ({
+          "@type": "Person",
+          name: fouder,
+        }))
+      : [],
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        email: info.email.address,
+        telephone: info.phone.number,
+        contactType: "customer service",
+      },
+    ],
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: info.address.locality,
+      addressRegion: info.address.region,
+      addressCountry: info.address.country,
+      postalCode: info.address.postalCode,
+    },
+    sameAs: social.networks.map(network => network.link),
+  })
+
   return (
     <Layout>
       <SEO
         titleTemplate={`%s : ${siteMetadata.slogan}`}
-        meta={[
-          {
-            name: "geo.position",
-            content: `${siteMetadata.geo.position.latitude}; ${siteMetadata.geo.position.longitude}`,
-          },
-          { name: "geo.placename", content: siteMetadata.geo.placename },
-          { name: "geo.region", content: siteMetadata.geo.region },
-        ]}
+        description={metadata.description}
+        image={ogImage}
+        structuredData={structuredDataOrganization}
       />
-      <Template flipcards={frontmatter.flipcards} />
+      <Template flipcards={flipcards} />
     </Layout>
   )
 }
@@ -74,6 +107,17 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+        metadata {
+          dateModified
+          cover {
+            childImageSharp {
+              fluid(maxWidth: 1200, quality: 95) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          description
         }
       }
     }

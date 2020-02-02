@@ -33,10 +33,15 @@ export const Template = ({ links }) => {
 
 export default function EspeciaisPage({ data }) {
   const { frontmatter } = data.markdownRemark
+  const { links, metadata } = frontmatter
+  const ogImage = metadata.cover
+    ? metadata.cover.childImageSharp.fluid.src
+    : null
+
   return (
     <CleanLayout>
-      <SEO title="Links" />
-      <Template links={frontmatter.links} />
+      <SEO title="Links" description={metadata.description} image={ogImage} />
+      <Template links={links} />
     </CleanLayout>
   )
 }
@@ -56,6 +61,17 @@ export const pageQuery = graphql`
         links {
           label
           url
+        }
+        metadata {
+          dateModified
+          cover {
+            childImageSharp {
+              fluid(maxWidth: 1200, quality: 95) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          description
         }
       }
     }

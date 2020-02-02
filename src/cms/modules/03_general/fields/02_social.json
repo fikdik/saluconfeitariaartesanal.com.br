@@ -1,7 +1,7 @@
 {
   "label": "Social Network",
   "name": "social",
-  "file": "content/info/social.json",
+  "file": "content/general/social.json",
   "fields": [
     {
       "label": "Social Networks",

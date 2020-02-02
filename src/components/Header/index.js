@@ -1,6 +1,6 @@
 import React from "react"
 
-import { phone } from "content/info/contact"
+import { phone } from "content/general/info"
 
 import SmartLink from "~/components/SmartLink"
 import SocialIcons from "~/components/SocialIcons"

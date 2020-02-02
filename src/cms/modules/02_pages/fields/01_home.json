@@ -52,14 +52,18 @@
       ]
     },
     {
-      "label": "SEO Metadata",
-      "name": "seo",
+      "label": "Metadata",
+      "name": "metadata",
       "widget": "object",
-      "required": false,
       "fields": [
         {
-          "label": "Highlight Image",
-          "name": "image",
+          "label": "Updated Date",
+          "name": "dateModified",
+          "widget": "datetime"
+        },
+        {
+          "label": "Cover",
+          "name": "cover",
           "widget": "image",
           "required": false
         },
@@ -71,26 +75,6 @@
           "pattern": [
             ".{30,155}",
             "Must have at least 30 characters and not more than 155"
-          ]
-        },
-        {
-          "label": "Extra Name Fields",
-          "name": "names",
-          "widget": "list",
-          "required": false,
-          "fields": [
-            { "label": "Name", "name": "name", "widget": "string" },
-            { "label": "Content", "name": "content", "widget": "string" }
-          ]
-        },
-        {
-          "label": "Extra Property Fields",
-          "name": "properties",
-          "widget": "list",
-          "required": false,
-          "fields": [
-            { "label": "Property", "name": "property", "widget": "string" },
-            { "label": "Content", "name": "content", "widget": "string" }
           ]
         }
       ]

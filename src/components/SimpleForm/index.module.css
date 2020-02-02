@@ -17,7 +17,8 @@
   }
 
   & textarea {
-    @apply h-24 -mb-2;
+    @apply h-24 -mb-2 text-base;
+    resize: none;
   }
 
   & span {

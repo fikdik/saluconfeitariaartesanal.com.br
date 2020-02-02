@@ -1,8 +1,7 @@
 import React from "react"
 
-import { email, phone, address } from "content/info/contact.json"
+import { email, phone, address } from "content/general/info.json"
 import { graphql, StaticQuery } from "gatsby"
-import _ from "lodash"
 
 import SmartLink from "~/components/SmartLink"
 import SocialIcons from "~/components/SocialIcons"
@@ -71,7 +70,7 @@ function FooterBlogPots({ data }) {
         <li key={post.id}>
           <SmartLink to={post.fields.slug}>
             <span>{post.frontmatter.title}</span>
-            <small>{post.frontmatter.date}</small>
+            <small>{post.frontmatter.metadata.datePublished}</small>
           </SmartLink>
         </li>
       ))}
@@ -85,14 +84,19 @@ const BlogPosts = () => (
       query FooterBlogIndex {
         allMarkdownRemark(
           limit: 3
-          sort: { order: DESC, fields: [frontmatter___date] }
+          sort: {
+            order: DESC
+            fields: [frontmatter___metadata___datePublished]
+          }
           filter: { frontmatter: { templateKey: { eq: "blog/post" } } }
         ) {
           nodes {
             id
             frontmatter {
               title
-              date(formatString: "MMMM DD, YYYY")
+              metadata {
+                datePublished(formatString: "MMMM DD, YYYY")
+              }
             }
             fields {
               slug

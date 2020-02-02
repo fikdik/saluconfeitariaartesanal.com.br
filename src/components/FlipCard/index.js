@@ -5,7 +5,7 @@ import SVGIcon from "~/components/SVGIcon"
 
 import styles from "./index.module.css"
 
-export default function FlipCard({ data, key }) {
+export default function FlipCard({ data }) {
   const { label, front, back } = data
   const image = useMemo(
     () =>
@@ -15,7 +15,7 @@ export default function FlipCard({ data, key }) {
     [front]
   )
   return (
-    <div className={styles.flipCard} key={key}>
+    <div className={styles.flipCard}>
       <div className={styles.flipCardInner}>
         <div className={styles.flipCardFront}>
           <div

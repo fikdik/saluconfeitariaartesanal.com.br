@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { toast } from "react-toastify"
 
 import { Form, Input, Textarea } from "@rocketseat/unform"
-import { phone, email } from "content/info/contact.json"
+import { phone, email } from "content/general/info.json"
 import * as Yup from "yup"
 
 // import SmartLink from "~/components/SmartLink"

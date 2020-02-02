@@ -1,6 +1,6 @@
 {
   "file": "content/settings/analytics.json",
-  "label": "Analytics",
-  "name": "analytics",
+  "label": "Google Analytics",
+  "name": "ga",
   "fields": [{ "label": "Track ID", "name": "trackingId", "widget": "string" }]
 }
