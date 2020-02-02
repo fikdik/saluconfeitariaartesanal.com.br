@@ -13,7 +13,7 @@ export const Template = ({ title, content, componentContent }) => {
   const PostContent = componentContent || Content
 
   return (
-    <main className="flex-auto">
+    <main className="flex-auto bg-white">
       <div className="bg-brand-1-4 text-brand-3-0 p-6 text-center text-3xl font-serif md:text-4xl">
         <h1>{title}</h1>
       </div>
@@ -28,29 +28,26 @@ export const Template = ({ title, content, componentContent }) => {
 }
 
 export default function PostBlog({ data }) {
-  const { frontmatter, html, excerpt, fields } = data.markdownRemark
+  const { frontmatter, html, rawMarkdownBody, fields } = data.markdownRemark
   const { slug } = fields
-  const { author, title, description, metadata } = frontmatter
-  const ogImage = metadata.cover
-    ? metadata.cover.childImageSharp.fluid.src
-    : null
+  const { author, title, description, cover, tags, metadata } = frontmatter
+  const ogImage = cover ? cover.childImageSharp.fluid.src : null
 
   const structuredDataArticle = JSON.stringify({
     "@context": "http://schema.org",
-    "@type": "NewsArticle",
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": "https://google.com/article",
-    },
+    "@type": "BlogPosting",
+    mainEntityOfPage: siteUrl + slug,
     headline: metadata.headline || description.slice(0, 110),
-    image: metadata.cover ? siteUrl + metadata.cover : siteUrl + ogImage,
+    image: metadata.cover
+      ? siteUrl + metadata.cover.childImageSharp.fluid.src
+      : siteUrl + ogImage,
     datePublished: metadata.datePublished,
     dateModified: metadata.dateModified,
     author: {
       "@type": "Person",
       name: author,
     },
-    articleBody: excerpt,
+    articleBody: rawMarkdownBody,
     publisher: {
       "@type": "Organization",
       name: info.localID.legalName,
@@ -63,6 +60,25 @@ export default function PostBlog({ data }) {
     url: siteUrl + slug,
   })
 
+  const meta = [
+    {
+      property: "article:published_time",
+      content: metadata.datePublished,
+    },
+    {
+      property: "article:modified_time",
+      content: metadata.dateModified,
+    },
+    // {
+    //   property: "article:section",
+    //   content: metadata.section,
+    // },
+    {
+      property: "article:tag",
+      content: tags.join(", "),
+    },
+  ]
+
   return (
     <Layout>
       <SEO
@@ -71,6 +87,7 @@ export default function PostBlog({ data }) {
         description={metadata.description}
         image={ogImage}
         structuredData={structuredDataArticle}
+        meta={meta}
       />
 
       <Template title={title} content={html} componentContent={HTMLContent} />
@@ -89,7 +106,7 @@ PostBlog.propTypes = {
 export const pageQuery = graphql`
   query PostBlog($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      excerpt
+      rawMarkdownBody
       html
       fields {
         slug
@@ -98,6 +115,14 @@ export const pageQuery = graphql`
         author
         title
         description
+        cover {
+          childImageSharp {
+            fluid(maxWidth: 1200, quality: 95) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        tags
         metadata {
           datePublished
           dateModified
@@ -108,7 +133,6 @@ export const pageQuery = graphql`
               }
             }
           }
-          headline
         }
       }
     }

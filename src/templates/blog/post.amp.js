@@ -5,66 +5,66 @@ import siteMetadata, { siteUrl } from "content/settings/siteMetadata.json"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 
-import Content, { HTMLContent } from "~/components/Content"
+import { HTMLContent } from "~/components/Content"
 import SEO from "~/components/SEO"
-import Layout from "~/layouts/Layout"
-
-export const TemplateAMP = ({ title, content, componentContent }) => {
-  const PostContent = componentContent || Content
-
-  return (
-    <main className="flex-auto">
-      <div className="bg-brand-1-4 text-brand-3-0 p-6 text-center text-3xl font-serif md:text-4xl">
-        <h1>{title}</h1>
-      </div>
-      <div className="container py-8">
-        <PostContent
-          className="blog-post-md responsive-columns text-justify"
-          content={content}
-        />
-      </div>
-    </main>
-  )
-}
+import AMPLayout from "~/layouts/AMPLayout"
 
 export default function PostBlogAMP({ data }) {
-  const { frontmatter, html, excerpt, fields } = data.markdownRemark
+  const { frontmatter, html, rawMarkdownBody, fields } = data.markdownRemark
   const { slug } = fields
-  const { author, title, description, metadata } = frontmatter
-  const ogImage = metadata.cover
-    ? metadata.cover.childImageSharp.fluid.src
-    : null
+  const { author, title, description, cover, tags, metadata } = frontmatter
+  const ogImage = cover ? cover.childImageSharp.fluid.src : null
 
   const structuredDataArticle = JSON.stringify({
     "@context": "http://schema.org",
-    "@type": "NewsArticle",
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": "https://google.com/article",
-    },
+    "@type": "BlogPosting",
+    mainEntityOfPage: siteUrl + slug,
     headline: metadata.headline || description.slice(0, 110),
-    image: metadata.cover ? siteUrl + metadata.cover : siteUrl + ogImage,
+    image: metadata.cover
+      ? siteUrl + metadata.cover.childImageSharp.fluid.src
+      : siteUrl + ogImage,
     datePublished: metadata.datePublished,
     dateModified: metadata.dateModified,
     author: {
       "@type": "Person",
       name: author,
     },
-    articleBody: excerpt,
+    articleBody: rawMarkdownBody,
     publisher: {
       "@type": "Organization",
       name: info.localID.legalName,
       logo: {
         "@type": "ImageObject",
-        url: siteMetadata.logo,
+        height: 1000,
+        url: siteUrl + siteMetadata.logo,
+        width: 1000,
       },
     },
     description: description,
     url: siteUrl + slug,
   })
 
+  const meta = [
+    {
+      property: "article:published_time",
+      content: metadata.datePublished,
+    },
+    {
+      property: "article:modified_time",
+      content: metadata.dateModified,
+    },
+    // {
+    //   property: "article:section",
+    //   content: metadata.section,
+    // },
+    {
+      property: "article:tag",
+      content: tags.join(", "),
+    },
+  ]
+
   return (
-    <Layout>
+    <AMPLayout>
       <SEO
         amp={true}
         title={title}
@@ -72,14 +72,17 @@ export default function PostBlogAMP({ data }) {
         description={metadata.description}
         image={ogImage}
         structuredData={structuredDataArticle}
+        meta={meta}
       />
-
-      <TemplateAMP
-        title={title}
-        content={html}
-        componentContent={HTMLContent}
-      />
-    </Layout>
+      <main className="flex-auto bg-white">
+        <div className="bg-brand-1-4 text-brand-3-0 p-6 text-center text-3xl font-serif md:text-4xl">
+          <h1>{title}</h1>
+        </div>
+        <div className="container py-8">
+          <HTMLContent className="blog-post-md text-justify" content={html} />
+        </div>
+      </main>
+    </AMPLayout>
   )
 }
 
@@ -94,7 +97,7 @@ PostBlogAMP.propTypes = {
 export const pageQuery = graphql`
   query PostBlogAMP($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      excerpt
+      rawMarkdownBody
       html
       fields {
         slug
@@ -103,6 +106,14 @@ export const pageQuery = graphql`
         author
         title
         description
+        tags
+        cover {
+          childImageSharp {
+            fluid(maxWidth: 1200, quality: 95) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         metadata {
           datePublished
           dateModified
