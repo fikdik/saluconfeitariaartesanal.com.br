@@ -95,7 +95,7 @@ PostBlogAMP.propTypes = {
 }
 
 export const pageQuery = graphql`
-  query PostBlogAMP($id: String!) {
+  query($id: String!) {
     markdownRemark(id: { eq: $id }) {
       rawMarkdownBody
       html

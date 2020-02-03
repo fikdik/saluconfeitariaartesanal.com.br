@@ -60,7 +60,7 @@ module.exports = {
       options: {
         ...manifest,
         display: `standalone`,
-        icon: `${__dirname}/static/${manifest.icon}`,
+        icon: `${__dirname}/static${manifest.icon}`,
       },
     },
     {
@@ -121,7 +121,7 @@ module.exports = {
         useAmpClientIdApi: true,
       },
     },
-
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {

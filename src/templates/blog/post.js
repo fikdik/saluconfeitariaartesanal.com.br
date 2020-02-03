@@ -104,7 +104,7 @@ PostBlog.propTypes = {
 }
 
 export const pageQuery = graphql`
-  query PostBlog($id: String!) {
+  query($id: String!) {
     markdownRemark(id: { eq: $id }) {
       rawMarkdownBody
       html

@@ -86,7 +86,7 @@ HomePage.propTypes = {
 }
 
 export const pageQuery = graphql`
-  query HomePage($id: String!) {
+  query($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         flipcards {

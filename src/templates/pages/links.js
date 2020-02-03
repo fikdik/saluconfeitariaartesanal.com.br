@@ -55,7 +55,7 @@ EspeciaisPage.propTypes = {
 }
 
 export const pageQuery = graphql`
-  query LinksPage($id: String!) {
+  query($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         links {
