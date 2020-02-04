@@ -2,13 +2,13 @@
 templateKey: pages/simple
 title: 'Alguns De Nossos Bolos Mais Pedidos. '
 galery:
-  - label: frango palmito e requeijão
+  - label: Frango palmito e requeijão
     picture: /img/bolos-card.jpg
-  - label: Banana Caramelada
+  - label: Banana caramelada
     picture: /img/bolo-banana-fit.jpg
-  - label: Bolo de Limão
+  - label: Bolo de limão
     picture: /img/bolo-bolo-da-vovo.jpg
-  - label: Pool cake de Brigadeiro
+  - label: Pool cake de brigadeiro
     picture: /img/bolo-brigadeiro.jpg
   - label: Meio amargo com avelã
     picture: /img/bolo-chocolate.jpg
@@ -18,13 +18,13 @@ galery:
     picture: /img/bolo-doce-de-leite.jpg
   - label: Fubá com goiaba
     picture: /img/bolo-goiaba.jpg
-  - label: Bolo de Limão
+  - label: Bolo de limão
     picture: /img/bolo-limao.jpg
   - label: Mesclado
     picture: /img/bolo-mesclado.jpg
-  - label: Chocolate com Nozes
+  - label: Chocolate com nozes
     picture: /img/bolo-nozes-e-chocolate.jpg
-  - label: Poll cake de cenoura com chocolate
+  - label: Pool cake de cenoura com chocolate
     picture: /img/bolo-pull-cake-de-chocolate.jpg
 metadata:
   dateModified: 2020-02-02T02:47:16.728Z
