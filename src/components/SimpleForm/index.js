@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { toast } from "react-toastify"
 
-import { Form, Input, Textarea } from "@rocketseat/unform"
+import { Form, Input } from "@rocketseat/unform"
 import { phone, email } from "content/general/info.json"
 import * as Yup from "yup"
 
@@ -72,7 +72,11 @@ export default function SimpleForm() {
         <Input name="name" type="text" placeholder="Escreva seu nome aqui" />
       </div>
       <div className={styles.input}>
-        <Textarea name="message" placeholder="Escreva sua mensagem aqui" />
+        <Input
+          multiline
+          name="message"
+          placeholder="Escreva sua mensagem aqui"
+        />
       </div>
       <div className="flex w-full text-white">
         <button

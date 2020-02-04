@@ -27,15 +27,15 @@ export const Template = ({
       <div className="bg-svg">
         <div className="py-6 container">
           <div className="flex flex-wrap py-10">
-            {galery.map((image, index) => (
+            {galery.map((item, index) => (
               <div className="p-2 w-full sm:w-1/2 md:w-1/3" key={String(index)}>
-                <div className="relative rounded overflow-hidden">
+                <div className={styles.imageContainer}>
                   <PreviewCompatibleImage
-                    imageInfo={{ image: image.picture, alt: image.label }}
+                    imageInfo={{ image: item.image, alt: item.label }}
                   />
-                  {image.label && (
-                    <div className="bg-brand-3-2 text-brand-4-4 absolute bottom-0 right-0 py-2 pl-6 pr-3 z-10 text-xl font-bold rounded-tl-full text-right">
-                      {image.label}
+                  {item.label && (
+                    <div className="bg-brand-3-2 text-brand-4-4 absolute bottom-0 right-0 py-2 pl-6 pr-3 z-10 font-bold rounded-tl-full text-right">
+                      {item.label}
                     </div>
                   )}
                 </div>
@@ -98,7 +98,7 @@ export const pageQuery = graphql`
         title
         galery {
           label
-          picture {
+          image {
             childImageSharp {
               fluid(maxWidth: 800, quality: 100) {
                 ...GatsbyImageSharpFluid

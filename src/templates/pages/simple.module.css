@@ -7,3 +7,16 @@
     border-top: 1px dotted theme("colors.brand-4.4");
   }
 }
+
+.imageContainer {
+  @apply relative rounded overflow-hidden;
+  @screen sm {
+    max-height: 28vw;
+  }
+
+  @screen md {
+    max-height: 20vw;
+  }
+}
+
+/* sm:w-1/2 md:w-1/3 */

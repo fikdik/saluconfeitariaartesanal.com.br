@@ -22,7 +22,7 @@
           "widget": "string",
           "required": false
         },
-        { "label": "Picture", "name": "picture", "widget": "image" }
+        { "label": "Image", "name": "image", "widget": "image" }
       ]
     },
     { "label": "Body", "name": "body", "widget": "markdown" },

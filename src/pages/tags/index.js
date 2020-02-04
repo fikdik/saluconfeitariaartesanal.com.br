@@ -1,5 +1,4 @@
 import React from "react"
-import Helmet from "react-helmet"
 
 import { Link, graphql } from "gatsby"
 import { kebabCase } from "lodash"
@@ -10,9 +9,6 @@ import Layout from "~/layouts/Layout"
 const TagsPage = ({
   data: {
     allMarkdownRemark: { group },
-    site: {
-      siteMetadata: { title },
-    },
   },
 }) => (
   <Layout>
