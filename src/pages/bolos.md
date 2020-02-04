@@ -1,17 +1,31 @@
 ---
 templateKey: pages/simple
-title: Alguns De Nossos Bolos Mais Pedidos.
+title: 'Alguns De Nossos Bolos Mais Pedidos. '
 galery:
-  - label: Bolo de noses
-    picture: /img/bolo-00001.jpg
-  - label: Chocolate
-    picture: /img/bolo-00003.jpg
-  - label: Goiaba
-    picture: /img/bolo-00004.jpg
-  - label: Coco
-    picture: /img/bolo-00005.jpg
-  - label: Cuca de banana
-    picture: /img/bolo-00006.jpg
+  - label: frango palmito e requeijão
+    picture: /img/bolos-card.jpg
+  - label: Banana Caramelada
+    picture: /img/bolo-banana-fit.jpg
+  - label: Bolo de Limão
+    picture: /img/bolo-bolo-da-vovo.jpg
+  - label: Pool cake de Brigadeiro
+    picture: /img/bolo-brigadeiro.jpg
+  - label: Meio amargo com avelã
+    picture: /img/bolo-chocolate.jpg
+  - label: Bolo de aipim
+    picture: /img/bolo-coco.jpg
+  - label: Churros
+    picture: /img/bolo-doce-de-leite.jpg
+  - label: Fubá com goiaba
+    picture: /img/bolo-goiaba.jpg
+  - label: Bolo de Limão
+    picture: /img/bolo-limao.jpg
+  - label: Mesclado
+    picture: /img/bolo-mesclado.jpg
+  - label: Chocolate com Nozes
+    picture: /img/bolo-nozes-e-chocolate.jpg
+  - label: Poll cake de cenoura com chocolate
+    picture: /img/bolo-pull-cake-de-chocolate.jpg
 metadata:
   dateModified: 2020-02-02T02:47:16.728Z
 ---

@@ -17,7 +17,7 @@ export const Template = ({ links }) => {
         {links.map(link => (
           <SmartLink
             className={`${styles.link} bg-brand-3-2 text-brand-1-5 font-bold`}
-            url={link.url}
+            to={link.url}
             key={link.url}
           >
             {link.label}
@@ -66,7 +66,7 @@ export const pageQuery = graphql`
           dateModified
           cover {
             childImageSharp {
-              fluid(maxWidth: 1200, quality: 95) {
+              fluid(maxWidth: 800, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }

@@ -10,7 +10,7 @@ flipcards:
       title: Bolos e Doces
     front:
       icon: smile
-      img: /img/bolo-00002.jpg
+      img: /img/bolos-card.jpg
     label: Bolos Apaixonantes
   - back:
       description: O coffee break para seu evento
@@ -19,7 +19,7 @@ flipcards:
       title: Coffee Break
     front:
       icon: coffee
-      img: /img/coffee-00001.jpg
+      img: /img/coffeebreak-card.jpg
     label: Coffee Breaks
   - back:
       description: Peça aquela encomenda para o seu dia especial.
@@ -28,10 +28,10 @@ flipcards:
       title: Produtos Especiais
     front:
       icon: gift
-      img: /img/especial-00001.jpg
+      img: /img/especiais-card.jpg
     label: Presentes Especiais
 metadata:
-  cover: /img/empresa-00003.jpg
+  cover: /img/ogimage.jpg
   dateModified: 2020-02-02T02:47:03.811Z
   description: Salu Confeitaria Artesanal. Sabor feito com amor.
 ---

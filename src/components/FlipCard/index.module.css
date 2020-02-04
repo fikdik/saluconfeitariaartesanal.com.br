@@ -34,3 +34,7 @@
   @apply bg-brand-2-3;
   transform: rotateY(180deg);
 }
+
+.flipCardFront {
+  text-shadow: 1px 1px 5px black;
+}

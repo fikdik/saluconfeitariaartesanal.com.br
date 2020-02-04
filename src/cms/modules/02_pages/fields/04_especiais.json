@@ -7,8 +7,7 @@
       "label": "Template Key",
       "name": "templateKey",
       "widget": "hidden",
-      "default": "pages/simple",
-      "required": false
+      "default": "pages/simple"
     },
 
     { "label": "Title", "name": "title", "widget": "string" },

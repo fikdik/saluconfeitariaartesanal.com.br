@@ -1,13 +1,14 @@
 import React from "react"
 
 import info from "content/general/info.json"
-import siteMetadata, { siteUrl } from "content/settings/siteMetadata.json"
+import { siteUrl } from "content/settings/siteMetadata.json"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 
 import Content, { HTMLContent } from "~/components/Content"
 import SEO from "~/components/SEO"
 import Layout from "~/layouts/Layout"
+import imagecb from "~/utils/imagecb"
 
 export const Template = ({ title, content, componentContent }) => {
   const PostContent = componentContent || Content
@@ -38,9 +39,7 @@ export default function PostBlog({ data }) {
     "@type": "BlogPosting",
     mainEntityOfPage: siteUrl + slug,
     headline: metadata.headline || description.slice(0, 110),
-    image: metadata.cover
-      ? siteUrl + metadata.cover.childImageSharp.fluid.src
-      : siteUrl + ogImage,
+    image: imagecb(metadata.cover, ogImage, siteUrl),
     datePublished: metadata.datePublished,
     dateModified: metadata.dateModified,
     author: {
@@ -53,7 +52,7 @@ export default function PostBlog({ data }) {
       name: info.localID.legalName,
       logo: {
         "@type": "ImageObject",
-        url: siteMetadata.logo,
+        url: siteUrl + "/icons/icon-512x512.png",
       },
     },
     description: description,
@@ -126,9 +125,10 @@ export const pageQuery = graphql`
         metadata {
           datePublished
           dateModified
+          headline
           cover {
             childImageSharp {
-              fluid(maxWidth: 1200, quality: 95) {
+              fluid(maxWidth: 800, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }

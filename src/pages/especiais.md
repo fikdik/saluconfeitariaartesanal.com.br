@@ -2,12 +2,18 @@
 templateKey: pages/simple
 title: 'Doces Para Ocasiões Especiais '
 galery:
-  - label: Coração Branco
-    picture: /img/especial-00001.jpg
-  - label: Dois Corações
-    picture: /img/especial-00002.jpg
-  - label: Mesclado
-    picture: /img/especial-00003.jpg
+  - label: Dois corações
+    picture: /img/especiais-dois-coracoes.jpg
+  - label: Morango
+    picture: /img/especiais-morango.jpg
+  - label: Bombons
+    picture: /img/especiais-bombons.jpg
+  - label: Apaixonado
+    picture: /img/especiais-card.jpg
+  - label: Champagne
+    picture: /img/especiais-champagne.jpg
+  - label: Preferido do Miguel
+    picture: /img/especiais-preferido-do-miguel.jpg
 metadata:
   dateModified: 2020-02-02T02:47:34.059Z
 ---

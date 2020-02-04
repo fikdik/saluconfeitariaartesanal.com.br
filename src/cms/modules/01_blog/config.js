@@ -29,10 +29,16 @@ const fields = [
     label: "Metadata",
     name: "metadata",
     widget: "object",
+    required: false,
     fields: [
       { label: "Publish Date", name: "datePublished", widget: "datetime" },
       { label: "Updated Date", name: "dateModified", widget: "datetime" },
-      { label: "Cover", name: "cover", widget: "image", required: false },
+      {
+        label: "Cover",
+        name: "cover",
+        widget: "image",
+        default: "/img/ogimage.jpg",
+      },
       {
         label: "Headline",
         name: "headline",

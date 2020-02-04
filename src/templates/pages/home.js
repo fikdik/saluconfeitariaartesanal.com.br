@@ -112,7 +112,7 @@ export const pageQuery = graphql`
           dateModified
           cover {
             childImageSharp {
-              fluid(maxWidth: 1200, quality: 95) {
+              fluid(maxWidth: 800, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }

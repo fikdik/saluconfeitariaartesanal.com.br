@@ -20,7 +20,7 @@
           "label": "Label",
           "name": "label",
           "widget": "string",
-          "required": false
+          "default": ""
         },
         { "label": "Picture", "name": "picture", "widget": "image" }
       ]

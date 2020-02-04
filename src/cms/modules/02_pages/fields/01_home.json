@@ -45,7 +45,7 @@
               "label": "Buton Text",
               "name": "linkText",
               "widget": "string",
-              "required": false
+              "default": "Saiba mais..."
             }
           ]
         }
@@ -64,14 +64,12 @@
         {
           "label": "Cover",
           "name": "cover",
-          "widget": "image",
-          "required": false
+          "widget": "image"
         },
         {
           "label": "Description",
           "name": "description",
           "widget": "string",
-          "required": false,
           "pattern": [
             ".{30,155}",
             "Must have at least 30 characters and not more than 155"
