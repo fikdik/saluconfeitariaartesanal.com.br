@@ -6,23 +6,14 @@ import PropTypes from "prop-types"
 const SmartLink = React.forwardRef(
   ({ to, className, activeClassName, children }, ref) => {
     const link = to || "/"
+    console.log(link)
     return (
       <>
-        {link.startsWith("/") && !link.startsWith("//") ? (
-          <Link
-            className={className}
-            activeClassName={activeClassName || "active"}
-            component={Link}
-            ref={ref}
-            to={link}
-          >
-            {children}
-          </Link>
-        ) : link.startsWith("#") ? (
+        {link.startsWith("#") ? (
           <a className={className} ref={ref} href={link}>
             {children}
           </a>
-        ) : (
+        ) : link.startsWith("https:") ? (
           <a
             className={className}
             ref={ref}
@@ -32,6 +23,16 @@ const SmartLink = React.forwardRef(
           >
             {children}
           </a>
+        ) : (
+          <Link
+            className={className}
+            activeClassName={activeClassName || "active"}
+            component={Link}
+            ref={ref}
+            to={link}
+          >
+            {children}
+          </Link>
         )}
       </>
     )

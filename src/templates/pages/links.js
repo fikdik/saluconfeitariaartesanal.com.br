@@ -17,7 +17,7 @@ export const Template = ({ links }) => {
         {links.map(link => (
           <SmartLink
             className={`${styles.link} bg-brand-3-2 text-brand-1-5 font-bold`}
-            to={link.url}
+            to={link.url.startsWith("https:") ? link.url : "/" + link.url}
             key={link.url}
           >
             {link.label}
