@@ -3,6 +3,7 @@ import { toast } from "react-toastify"
 
 import { Form, Input } from "@rocketseat/unform"
 import { phone, email } from "content/general/info.json"
+import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 import * as Yup from "yup"
 
 // import SmartLink from "~/components/SmartLink"
@@ -41,6 +42,12 @@ export default function SimpleForm() {
         })
         toast.success("Campos validos, complete o envio pelo Whatsapp")
         resetForm({ message: "" })
+        trackCustomEvent({
+          category: "whatsapp button",
+          action: "Click",
+          label: "Contato pelo Whatsapp",
+          value: 10,
+        })
         break
       }
       case "email": {
@@ -51,6 +58,12 @@ export default function SimpleForm() {
         })
         toast.success("Campos validos, complete o envio pelo seu app de email")
         resetForm({ message: "" })
+        trackCustomEvent({
+          category: "email button",
+          action: "Click",
+          label: "Contato pelo email",
+          value: 1,
+        })
         break
       }
       default: {

@@ -1,6 +1,7 @@
 import React from "react"
 
 import { Link } from "gatsby"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 import PropTypes from "prop-types"
 
 const SmartLink = React.forwardRef(
@@ -13,16 +14,10 @@ const SmartLink = React.forwardRef(
           <a className={className} ref={ref} href={link}>
             {children}
           </a>
-        ) : link.startsWith("https:") ? (
-          <a
-            className={className}
-            ref={ref}
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        ) : link.startsWith("http") ? (
+          <OutboundLink className={className} ref={ref} href={link}>
             {children}
-          </a>
+          </OutboundLink>
         ) : (
           <Link
             className={className}

@@ -11,11 +11,11 @@
 .imageContainer {
   @apply relative rounded overflow-hidden;
   @screen sm {
-    max-height: 28vw;
+    max-height: 180px;
   }
 
   @screen md {
-    max-height: 20vw;
+    max-height: 255px;
   }
 }
 
