@@ -15,7 +15,12 @@ const SmartLink = React.forwardRef(
             {children}
           </a>
         ) : link.startsWith("http") ? (
-          <OutboundLink className={className} ref={ref} href={link}>
+          <OutboundLink
+            className={className}
+            ref={ref}
+            href={link}
+            target="_blank"
+          >
             {children}
           </OutboundLink>
         ) : (

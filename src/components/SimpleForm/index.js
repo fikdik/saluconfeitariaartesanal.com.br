@@ -40,14 +40,14 @@ export default function SimpleForm() {
           phone: phone.number,
           text,
         })
-        toast.success("Campos validos, complete o envio pelo Whatsapp")
-        resetForm({ message: "" })
         trackCustomEvent({
           category: "whatsapp button",
           action: "Click",
           label: "Contato pelo Whatsapp",
           value: 10,
         })
+        toast.success("Campos validos, complete o envio pelo Whatsapp")
+        resetForm({ message: "" })
         break
       }
       case "email": {
@@ -56,14 +56,14 @@ export default function SimpleForm() {
           subject: `contato pela página ${window.location.pathname} `,
           body,
         })
-        toast.success("Campos validos, complete o envio pelo seu app de email")
-        resetForm({ message: "" })
         trackCustomEvent({
           category: "email button",
           action: "Click",
           label: "Contato pelo email",
           value: 1,
         })
+        toast.success("Campos validos, complete o envio pelo seu app de email")
+        resetForm({ message: "" })
         break
       }
       default: {
