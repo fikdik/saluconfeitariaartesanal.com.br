@@ -37,3 +37,7 @@
     border-top: 1px dotted theme("colors.brand-4.4");
   }
 }
+
+.Toastify[data-reactroot] {
+  display: none;
+}

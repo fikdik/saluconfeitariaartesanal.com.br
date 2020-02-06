@@ -7,7 +7,6 @@ import PropTypes from "prop-types"
 const SmartLink = React.forwardRef(
   ({ to, className, activeClassName, children }, ref) => {
     const link = to || "/"
-    console.log(link)
     return (
       <>
         {link.startsWith("#") ? (

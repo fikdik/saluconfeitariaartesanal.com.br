@@ -7,8 +7,6 @@ import { Template } from "~/templates/pages/coffeebreak"
 function Preview({ entry, widgetFor }) {
   const data = entry.getIn(["data"]).toJS()
 
-  console.log(data)
-
   if (data) {
     return (
       <Template

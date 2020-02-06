@@ -23,6 +23,7 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
+        <div className="Toastify" data-reactroot></div>
       </body>
     </html>
   )

@@ -7,8 +7,6 @@ import { Template } from "~/templates/pages/links"
 function Preview({ entry }) {
   const data = entry.getIn(["data"]).toJS()
 
-  console.log(data)
-
   if (data) {
     return <Template links={data.links} />
   } else {
