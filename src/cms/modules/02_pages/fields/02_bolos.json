@@ -19,8 +19,7 @@
         {
           "label": "Label",
           "name": "label",
-          "widget": "string",
-          "default": ""
+          "widget": "string"
         },
         { "label": "Image", "name": "image", "widget": "image" }
       ]

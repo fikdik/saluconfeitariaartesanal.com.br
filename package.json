@@ -8,7 +8,7 @@
   "scripts": {
     "start": "run-p start:**",
     "starty:clean": "gatsby clean",
-    "start:gatsby": "cross-env GATSBY_GRAPHQL_IDE=playground gatsby develop -H 0.0.0.0 -o",
+    "start:gatsby": "gatsby develop",
     "build": "run-p 'build:!(storybook)'",
     "build:gatsby": "gatsby build",
     "serve": "run-s serve:**",

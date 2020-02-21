@@ -5,15 +5,7 @@ const fields = [
     widget: "hidden",
     default: "blog/post",
   },
-  {
-    label: "Author",
-    name: "author",
-    collection: "authors",
-    widget: "relation",
-    valueField: "name",
-    searchFields: ["name"],
-    displayFields: ["name"],
-  },
+  { label: "Author", name: "author", widget: "string" },
   { label: "Title", name: "title", widget: "string" },
   { label: "Description", name: "description", widget: "text" },
   {
@@ -24,12 +16,11 @@ const fields = [
   },
   { label: "Layout Cover", name: "cover", widget: "image", required: false },
   { label: "Body", name: "body", widget: "markdown" },
-  { label: "Tags", name: "tags", widget: "list" },
+  { label: "Tags", name: "tags", widget: "list", default: ["novo"] },
   {
     label: "Metadata",
     name: "metadata",
     widget: "object",
-    required: false,
     fields: [
       { label: "Publish Date", name: "datePublished", widget: "datetime" },
       { label: "Updated Date", name: "dateModified", widget: "datetime" },

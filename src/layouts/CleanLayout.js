@@ -10,7 +10,11 @@ export default function CleanLayout({ children }) {
     <div className="min-h-screen flex flex-col bg-brand-2-5">
       <header className="flex justify-center items-center w-full py-8">
         <SmartLink to="/">
-          <img className="h-16" src={siteMetadata.logoAlt} alt="the brand" />
+          <img
+            className="h-16"
+            src={siteMetadata.logoAlt}
+            alt={`Logo, ${siteMetadata.name}`}
+          />
         </SmartLink>
       </header>
       <section id="main" className="flex-grow flex">

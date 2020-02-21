@@ -20,7 +20,7 @@ export default function Navbar() {
             <img
               className="h-16"
               src={siteMetadata.logo}
-              alt={siteMetadata.title}
+              alt={`Logo, ${siteMetadata.name}`}
             />
           </SmartLink>
         </div>

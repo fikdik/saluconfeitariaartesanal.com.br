@@ -8,10 +8,9 @@ export default function Signature(props) {
   const thisYear = new Date().getFullYear()
   return (
     <div className={styles.signature} {...props}>
-      © Copyright 2013 - {thisYear} <br className="md:hidden" />
+      © Copyright 2013 - {thisYear} <br className="sm:hidden" />
       desenvolvido por
-      <SmartLink to="https://fikdik.com.br">
-        {" "}
+      <SmartLink to="https://fikdik.com.br" eventLabel="site #fikdik">
         <small>#</small>
         fikdik
       </SmartLink>

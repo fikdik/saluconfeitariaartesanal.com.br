@@ -1,6 +1,7 @@
 import React from "react"
 
 import { email, phone, address } from "content/general/info.json"
+import siteMetadata from "content/settings/siteMetadata"
 import { graphql, StaticQuery } from "gatsby"
 
 import SmartLink from "~/components/SmartLink"
@@ -15,7 +16,7 @@ export default function Footer() {
     <div className={styles.bgFooter}>
       <div className="container flex flex-wrap">
         <div className={`${styles.footerCol} ${styles.logoCol} `}>
-          <img src="/img/salu-logo-bbg.svg" alt="Salu logo" />
+          <img src={siteMetadata.logoAlt} alt={`Logo, ${siteMetadata.name}`} />
           <span>Tudo feito com amor!</span>
           <div className="flex items-center">
             <SmartLink className="w-10 h-10 p-1 rounded-lg mr-2" to="/links">
